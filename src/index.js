@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import VentanaGuardado from './Componentes/VentanaGuardado';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <VentanaGuardado />
   </React.StrictMode>,
   document.getElementById('root')
 );
