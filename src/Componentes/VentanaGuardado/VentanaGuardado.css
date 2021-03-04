@@ -1,0 +1,30 @@
+.VentanaGuardado{
+    border: 1px solid #000;
+    width: 269px;
+    height: 209px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20%;
+}
+
+#cierra{
+    width: 28px;
+    height: 26px;
+    text-align: end;
+    margin-left: 85%;
+    margin-top: 5%;
+}
+
+#paloma{
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: auto;
+}
+
+p{
+    font-size: 18px;
+    text-align: center;
+}
