@@ -29,10 +29,11 @@ function Login() {
                         </input>
                     </div>
                 </div>
-                    
-                
-            
-
+            </section>
+            <section className="botonInicio">
+                <button>
+                   Iniciar sesión 
+                </button>
             </section>
         </div>
     );
