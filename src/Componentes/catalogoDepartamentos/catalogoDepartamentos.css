@@ -1,4 +1,4 @@
-.CatalogoContactos{
+.catalogoDepartamentos{
     border: 1px solid #000;
     width: 202px;
     height: 204px;
@@ -9,9 +9,10 @@
     margin: auto;
     margin-top: 20%;
     border-radius: 14px;
+    padding: 20px 20px 20px 20px;
 }
 
-.BotonesContactos{
+.botonDepartamento{
     background-color: #fff;
     border: none;
     font-size: 20px;

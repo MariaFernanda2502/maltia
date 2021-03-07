@@ -1,0 +1,16 @@
+.BotonEditarBoton{
+    width: 63px;
+    height: 31px;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 17px;
+    left: 0%;
+    right: 51.61%;
+    top: 0%;
+    bottom: 0%;
+    background: #A1CF8C;
+    border: 1px solid #000;
+    border-radius: 14px;
+}

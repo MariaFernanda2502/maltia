@@ -6,9 +6,9 @@ import './VentanaGuardado.css';
 function VentanaGuardado() {
   return (
     <div className="VentanaGuardado">
-        <img src= {cerrar} id="cierra"/>
+        <button id="Botoncierra"><img src= {cerrar} id="cierra"/></button>
         <img src = {palomita} id="paloma"/>
-        <p>Guardado con éxito</p>
+        <p id="Guardadoconexito">Guardado con éxito</p>
     </div>
   );
 }

@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Login from './Componentes/Login/Login'
-
+import Login from './Componentes/Login/Login';
+import Compromiso from './Componentes/catalogoCompromiso/catalogoCompromiso';
+import Contactos from './Componentes/CatalogoContactos/CatalogoContactos';
+import Departamentos from './Componentes/catalogoDepartamentos/catalogoDepartamentos';
+import Desactivar from './Componentes/desactivar/desactivar';
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Desactivar />
   </React.StrictMode>,
   document.getElementById('root')
 );
