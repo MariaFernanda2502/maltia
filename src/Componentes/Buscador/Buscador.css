@@ -1,0 +1,58 @@
+.buscar{
+    position: absolute;
+    padding: 15px;
+    right: 2%;
+    top: 2%;
+}
+
+.buscar input {
+    width: 321px;
+    height: 37px;
+    padding: 0 70px 0 15px;
+    font-size: 18px;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    filter: drop-shadow(0px 2px 2px #000);
+}
+
+.imagen button{
+    position: absolute;
+    top: 30%;
+    right: 15%;
+    width: 35px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    color:white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0;
+}
+
+#iconoBuscar {
+    width: 20px;
+    height: 20px;
+}
+
+.imagen2 button{
+    position: absolute;
+    top: 30%;
+    right: 6%;
+    width: 35px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    color:white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0;
+}
+
+#filtrar {
+    width: 22px;
+    height: 22px;
+}
