@@ -1,0 +1,18 @@
+.BotonEstatusBoton{
+    width: 33px;
+    height: 33px;
+    border-radius: 100px;
+    border: 1px solid #000;
+}
+
+#aprobado{
+    background: #A1CF8C;
+}
+
+#enEspera{
+    background: #FFE601;
+}
+
+#rechazado{
+    background: #F30000;
+}
