@@ -10,7 +10,7 @@ import Departamentos from './Componentes/catalogoDepartamentos/catalogoDepartame
 import Desactivar from './Componentes/desactivar/desactivar';
 ReactDOM.render(
   <React.StrictMode>
-    <Desactivar />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
