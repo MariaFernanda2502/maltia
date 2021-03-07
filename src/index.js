@@ -8,6 +8,7 @@ import Compromiso from './Componentes/catalogoCompromiso/catalogoCompromiso';
 import Contactos from './Componentes/CatalogoContactos/CatalogoContactos';
 import Departamentos from './Componentes/catalogoDepartamentos/catalogoDepartamentos';
 import Desactivar from './Componentes/desactivar/desactivar';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
