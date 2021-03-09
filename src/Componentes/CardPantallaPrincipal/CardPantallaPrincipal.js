@@ -4,10 +4,10 @@ import prestamos from './imgs/prestamos.jpeg';
 
 function CardPantallaPrincipal() {
     return (
-        <div className = 'Card'>
+        <button className = 'Card'>
             <img className = 'Imagen' src = {prestamos} />
             <p className = 'Opcion'>Préstamos</p>
-        </div>
+        </button>
     )
 }
 
