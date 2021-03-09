@@ -3,16 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Login from './Componentes/Login/Login';
+import LoginPantalla from './Pantallas/LoginPantalla/LoginPantalla';
 import Compromiso from './Componentes/catalogoCompromiso/catalogoCompromiso';
 import Contactos from './Componentes/CatalogoContactos/CatalogoContactos';
 import Departamentos from './Componentes/catalogoDepartamentos/catalogoDepartamentos';
 import Desactivar from './Componentes/desactivar/desactivar';
 import FlechaOpciones from './Componentes/FlechaOpciones';
+import Buscador from './Componentes/Buscador/Buscador';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LoginPantalla />
   </React.StrictMode>,
   document.getElementById('root')
 );

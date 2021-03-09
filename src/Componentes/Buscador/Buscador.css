@@ -1,8 +1,7 @@
 .buscar{
-    position: absolute;
+    display: flex;
+    justify-content: flex-end;
     padding: 15px;
-    right: 2%;
-    top: 2%;
 }
 
 .buscar input {
@@ -20,9 +19,21 @@
 }
 
 .imagen button{
-    position: absolute;
-    top: 30%;
-    right: 15%;
+    display: flex;
+    justify-content: flex-end;
+    width: 35px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    color:white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0;
+}
+
+.imagen2 button{
+    display: flex;
+    justify-content: flex-end;
     width: 35px;
     height: 30px;
     line-height: 20px;
@@ -36,20 +47,6 @@
 #iconoBuscar {
     width: 20px;
     height: 20px;
-}
-
-.imagen2 button{
-    position: absolute;
-    top: 30%;
-    right: 6%;
-    width: 35px;
-    height: 30px;
-    line-height: 20px;
-    text-align: center;
-    color:white;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 0;
 }
 
 #filtrar {
