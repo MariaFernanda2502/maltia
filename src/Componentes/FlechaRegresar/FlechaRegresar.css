@@ -1,7 +1,11 @@
+.botonflecha {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 .botonflecha button{
-    position: absolute;
-    top: 3%;
-    right: 95.5%;
+    display: flex;
     width: 40px;
     height: 45px;
     line-height: 20px;
@@ -10,6 +14,7 @@
     border-radius: 50%;
     cursor: pointer;
     border: 0;
+    padding: 20px;
 }
 
 #flecha {
