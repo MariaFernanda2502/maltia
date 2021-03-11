@@ -10,10 +10,11 @@ import Departamentos from './Componentes/catalogoDepartamentos/catalogoDepartame
 import Desactivar from './Componentes/desactivar/desactivar';
 import FlechaOpciones from './Componentes/FlechaOpciones';
 import Buscador from './Componentes/Buscador/Buscador';
+import AsesorVerProspectos from './Pantallas/AsesorVerProspectos/AsesorVerProspectos';
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginPantalla />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
