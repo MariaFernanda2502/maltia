@@ -1,0 +1,57 @@
+.AdminVerAnalistas{
+    display: flex;
+    flex-direction: column;
+}
+
+.AdminVerAnalistasHeader{
+    position: sticky;
+    display: flex;
+    justify-content: center;
+}
+
+.ContenidoParaAdminVerAnalistas{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 2px solid #000;
+    border-radius: 25px;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.NombreAnalistaTitulo{
+    left: 100%;
+    width: 319.04px;
+    height: 30.5px;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+.CuadroNombreAnalista{
+    border-bottom: 1.3px solid #000;
+}
+
+.BotonEditarParaAnalista{
+    display: flex;
+    flex-direction: flex-end;
+}
+.cde{
+    width: 220px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.FooterAdminVerAnalista{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}

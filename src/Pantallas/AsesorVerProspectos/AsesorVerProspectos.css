@@ -1,0 +1,53 @@
+.PrincipalAsesores{
+    display: flex;
+    flex-direction: column;
+}
+
+.BuscadorParaAsesores{
+    position: sticky;
+    display: flex;
+    justify-content: center;
+}
+
+.TablaParaAsesores{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 2px solid #000;
+    border-radius: 25px;
+    width: 400px;
+}
+
+.Nombreprosp{
+    left: 100%;
+    width: 319.04px;
+    height: 30.5px;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.LineaSeparadora{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.EditarDatos, .EstatusPesona{
+    margin-right: -2000px
+}
+
+.FooterAsesores{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}

@@ -1,0 +1,41 @@
+.GeneralVerPrestatarios{
+    display: flex;
+    flex-direction: column;
+}
+
+.BuscadorAnalistas{
+    position: sticky;
+    display: flex;
+    justify-content: center;
+}
+
+.ContenidoTablaParaAnalistas{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 2px solid #000;
+    border-radius: 25px;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.NombreprestaAna{
+    left: 100%;
+    width: 319.04px;
+    height: 30.5px;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.LineaSeparadoraAnalista{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
