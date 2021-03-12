@@ -15,27 +15,40 @@
     flex-direction: column;
     margin: auto;
     border: 2px solid #000;
-    border-radius: 25px;
-    width: 400px;
+    border-radius: 15px;
+    width: 357px;
     margin-bottom: 20px;
 }
 
+.TituloPrestatarios{
+    border-bottom: 1px solid #000;
+    text-align: left;
+    margin-left: 5px;
+}
+
 .NombreprestaAna{
-    left: 100%;
-    width: 319.04px;
-    height: 30.5px;
     font-family: K2D;
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
     line-height: 23px;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-bottom: 0;
 }
 
-.LineaSeparadoraAnalista{
-    margin: 0;
-    display: flex;
-    justify-content: center;
+.nombrePrestatarioAnalista{
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 13px;
+    line-height: 17px;
+    width: 250px;
+}
+
+.ElementosDeTablaAnalistaprest{
+    width: 354px;
+    height: 35px;
+    border-bottom: 1px solid #000;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }

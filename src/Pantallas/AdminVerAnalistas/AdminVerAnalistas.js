@@ -13,21 +13,96 @@ export default function AdminVerAnalistas(props) {
                 <FlechaRegresar />
                 <Buscador />
             </header>
-
             <body className="ContenidoParaAdminVerAnalistas">
                 <div className="CuadroNombreAnalista">
                     <h3 className="NombreAnalistaTitulo">Nombre del analista</h3>
-                    
                 </div>
                 <div className="DatosDeAdminVerAnalista">
                     <table>
                         <tr className="ElementosTablaAdminVerAnalista">
-                            <td className="nombreDeAnalista">Efren Aldana Escalona</td>
-                            <div className="cde">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAnalista"><BotonEditar /></td>
-                                <td className="BotonEstatusParaAnalista"><BotonDesactivar/></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
                             </div>
                          </tr>
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr> 
+                         <tr className="ElementosTablaAdminVerAnalista">
+                            <div className="InforamcionDeTablaAdminAnalista">
+                                <td className="nombreDeAnalista">Efren Aldana Escalona  </td>
+                                <td className="BotonEditarParaAnalista"><BotonEditar /></td>
+                                <td className="BotonDesactivarParaAnalista"><BotonDesactivar/></td>
+                            </div>
+                         </tr>  
                     </table>
                 </div>
             </body>

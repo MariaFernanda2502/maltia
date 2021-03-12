@@ -14,112 +14,46 @@ export default function AnalistaVerPrestatarios(props) {
             </header>
 
             <body className="ContenidoTablaParaAnalistas">
-                <div>
+                <div className="TituloPrestatarios">
                     <h3 className="NombreprestaAna">Nombre del prestatario</h3>
-                    <p className="LineaSeparadoraAnalista">______________________________________________________</p>
                 </div>
                 <div className="DatosPrestatarioAnalista">
                     <table>
                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
-                         <tr className="ElementosTablaPrestatarioAnalista">
-                             <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                            <td className="EditarDatosAnalista"><BotonEditar /></td>
-                            <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                         </tr>
+                           <div className="ElementosDeTablaAnalistaprest">
+                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
+                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
+                           </div>
+                        </tr>
+                        <tr className="ElementosTablaPrestatarioAnalista">
+                           <div className="ElementosDeTablaAnalistaprest">
+                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
+                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
+                           </div>
+                        </tr>
+                        <tr className="ElementosTablaPrestatarioAnalista">
+                           <div className="ElementosDeTablaAnalistaprest">
+                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
+                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
+                           </div>
+                        </tr>
+                        <tr className="ElementosTablaPrestatarioAnalista">
+                           <div className="ElementosDeTablaAnalistaprest">
+                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
+                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
+                           </div>
+                        </tr>
+                        <tr className="ElementosTablaPrestatarioAnalista">
+                           <div className="ElementosDeTablaAnalistaprest">
+                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
+                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
+                           </div>
+                        </tr>
                     </table>
                 </div>
             </body>

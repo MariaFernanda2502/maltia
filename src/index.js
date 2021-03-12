@@ -20,7 +20,7 @@ import BotonNuevoAnalista from './Componentes/BotonNuevoAnalista/BotonNuevoAnali
 
 ReactDOM.render(
   <React.StrictMode>
-    <AdminVerAnalistas />
+    <AnalistaVerPrestatarios />
   </React.StrictMode>,
   document.getElementById('root')
 );
