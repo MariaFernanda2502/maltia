@@ -1,14 +1,13 @@
-* {
+*{
     margin:  0;
     padding: 0;
 }
 
 .PantallaCardsSelectoras_body {
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: fit-content;
     width: fit-content;
     top: 0;
@@ -19,7 +18,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: fit-content;
     width: fit-content;
+}
+
+.Adminprincipal_link{
+    display: flex;
+    justify-content: center;
 }

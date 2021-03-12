@@ -5,12 +5,15 @@ import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import BotonEditar from '../../Componentes/BotonEditar/BotonEditar';
 import BotonDesactivar from '../../Componentes/BotonDesactivar';
 import BotonNuevoAsesor from '../../Componentes/BotonNuevoAsesor';
+import { Link } from 'react-router-dom';
 
 export default function AdminVerAsesores(props) {
     return (
         <div className="AdminVerAsesores">
             <header className="AdminVerAsesoresHeader">
-                <FlechaRegresar />
+                <nav>
+                    <Link to="/admin"><FlechaRegresar /></Link>
+                </nav>
                 <Buscador />
             </header>
             <body className="ContenidoParaAdminVerAsesores">
@@ -22,63 +25,77 @@ export default function AdminVerAsesores(props) {
                         <tr className="ElementosTablaAdminVerAsesores">
                             <div className="InforamcionDeTablaAdminAsesor">
                                 <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
+                                <td> 
+                                    <nav>
+                                        <Link to="/admin/editar-asesor" className="BotonEditarParaAsesor"> <BotonEditar /> </Link>
+                                    </nav>
+                                </td>
                                 <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
                             </div>
                          </tr>
                          <tr className="ElementosTablaAdminVerAsesores">
                             <div className="InforamcionDeTablaAdminAsesor">
                                 <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
+                                <td> 
+                                    <nav>
+                                        <Link to="/admin/editar-asesor" className="BotonEditarParaAsesor"> <BotonEditar /> </Link>
+                                    </nav>
+                                </td>
                                 <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
                             </div>
                          </tr>
                          <tr className="ElementosTablaAdminVerAsesores">
                             <div className="InforamcionDeTablaAdminAsesor">
                                 <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
+                                <td> 
+                                    <nav>
+                                        <Link to="/admin/editar-asesor" className="BotonEditarParaAsesor"> <BotonEditar /> </Link>
+                                    </nav>
+                                </td>
                                 <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
                             </div>
                          </tr>
                          <tr className="ElementosTablaAdminVerAsesores">
                             <div className="InforamcionDeTablaAdminAsesor">
                                 <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
+                                <td> 
+                                    <nav>
+                                        <Link to="/admin/editar-asesor" className="BotonEditarParaAsesor"> <BotonEditar /> </Link>
+                                    </nav>
+                                </td>
                                 <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
                             </div>
                          </tr>
                          <tr className="ElementosTablaAdminVerAsesores">
                             <div className="InforamcionDeTablaAdminAsesor">
                                 <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
+                                <td> 
+                                    <nav>
+                                        <Link to="/admin/editar-asesor" className="BotonEditarParaAsesor"> <BotonEditar /> </Link>
+                                    </nav>
+                                </td>
                                 <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
                             </div>
                          </tr>
                          <tr className="ElementosTablaAdminVerAsesores">
                             <div className="InforamcionDeTablaAdminAsesor">
                                 <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
+                                <td> 
+                                    <nav>
+                                        <Link to="/admin/editar-asesor" className="BotonEditarParaAsesor"> <BotonEditar /> </Link>
+                                    </nav>
+                                </td>
                                 <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
                             </div>
                          </tr>
                          <tr className="ElementosTablaAdminVerAsesores">
                             <div className="InforamcionDeTablaAdminAsesor">
                                 <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
-                                <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosTablaAdminVerAsesores">
-                            <div className="InforamcionDeTablaAdminAsesor">
-                                <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
-                                <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosTablaAdminVerAsesores">
-                            <div className="InforamcionDeTablaAdminAsesor">
-                                <td className="nombreDeAsesor">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor"><BotonEditar /></td>
+                                <td> 
+                                    <nav>
+                                        <Link to="/admin/editar-asesor" className="BotonEditarParaAsesor"> <BotonEditar /> </Link>
+                                    </nav>
+                                </td>
                                 <td className="BotonDesactivarParaAsesor"><BotonDesactivar/></td>
                             </div>
                          </tr>
@@ -86,7 +103,9 @@ export default function AdminVerAsesores(props) {
                 </div>
             </body>
             <footer className="FooterAdminVerAsesor">
-                <BotonNuevoAsesor />
+                <nav>
+                    <Link to="/admin/nuevo-asesor"><BotonNuevoAsesor /></Link>
+                </nav>
             </footer>
         </div>
     );

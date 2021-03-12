@@ -61,3 +61,13 @@
     align-items: center;
     margin: 10px;
 }
+
+.BotonEditarParaAsesor{
+    display: flex;
+    justify-content: center;
+}
+
+.navclas{
+    display: flex;
+    justify-content: center;
+}

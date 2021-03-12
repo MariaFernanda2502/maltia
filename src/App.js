@@ -16,6 +16,8 @@ import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
 import AdminNuevoAnalista from './Pantallas/AdminNuevoAnalista/AdminNuevoAnalista';
 import AdminVerAnalistas from './Pantallas/AdminVerAnalistas/AdminVerAnalistas';
 import AdminVerAsesores from './Pantallas/AdminVerAsesores/AdminVerAsesores';
+import AdminEditarAsesor from './Pantallas/AdminEditarAsesor/AdminEditarAsesor';
+import AdminEditarAnalista from './Pantallas/AdminEditarAnalista/AdminEditarAnalista';
 
 function App() {
   return (
@@ -27,18 +29,23 @@ function App() {
         <Route path='/analista/reportes' exact>
           <AnalistaReportes />
         </Route>
-        <Route path='/admin/ver-asesores' exact>
-          <AdminVerAsesores />
-        </Route>
-        <Route path='/admin/ver-analistas' exact>
-          <AdminVerAnalistas />
-        </Route>
-
         <Route path='/admin/nuevo-asesor' exact>
           <AdminNuevoAsesor />
         </Route>
+        <Route path='/admin/editar-asesor' exact>
+          <AdminEditarAsesor />
+        </Route>
+        <Route path='/admin/editar-analista' exact>
+          <AdminEditarAnalista />
+        </Route>
         <Route path='/admin/nuevo-analista' exact>
           <AdminNuevoAnalista />
+        </Route>
+        <Route path = '/admin/ver-asesores'>
+          <AdminVerAsesores />
+        </Route>
+        <Route path = '/admin/ver-analistas'>
+          <AdminVerAnalistas />
         </Route>
         <Route path='/admin' exact>
           <AdminPrincipal />

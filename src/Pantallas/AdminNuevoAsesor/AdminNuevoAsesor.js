@@ -4,6 +4,8 @@ import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import './AdminNuevoAsesor.css';
 import VentanaGuardado from '../../Componentes/VentanaGuardado/VentanaGuardado';
+import { Link } from 'react-router-dom';
+
 
 
 function AdminNuevoAsesor() {
@@ -17,7 +19,9 @@ function AdminNuevoAsesor() {
     return (
         <div>
             <header>
-                <FlechaRegresar/>
+                <nav>
+                    <Link to = "/admin/ver-asesores"><FlechaRegresar/></Link>
+                </nav>
             </header>
             <body className='AdminNuevoAsesor_body'>
                 <h1 className='AdminNuevoAsesor_h1'> Crear un asesor</h1>

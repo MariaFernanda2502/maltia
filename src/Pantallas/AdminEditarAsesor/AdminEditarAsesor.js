@@ -1,10 +1,10 @@
-import React from 'react';
 import Select from 'react-select';
 import { Tiendas } from '../AdminNuevoAsesor/Tiendas';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import './AdminEditarAsesor.css';
 import VentanaGuardado from '../../Componentes/VentanaGuardado/VentanaGuardado';
+import { Link } from 'react-router-dom';
 
 
 function AdminEditarAsesor() {
@@ -18,18 +18,16 @@ function AdminEditarAsesor() {
     return (
         <div>
             <header>
-                <FlechaRegresar/>
+                <nav>
+                    <Link to = "/admin/ver-asesores"><FlechaRegresar/></Link>
+                </nav>
             </header>
             <body className='AdminEditarAsesor_body'>
-                <h1 className='AdminEditarAsesor_h1'> Crear un asesor</h1>
+                <h1 className='AdminEditarAsesor_h1'> Asesor #9763</h1>
                 <form className='AdminEditarAsesor_form'>
-                    <label className='AdminEditarAsesor_label'> Nombre(s) * </label>
                     <input className='AdminEditarAsesor_input' type='text' placeholder='Nombre(s) *' required />
-                    <label className='AdminEditarAsesor_label'> Apellidos * </label>
                     <input className='AdminEditarAsesor_input' type='text' placeholder='Apellidos *' required/>
-                    <label className='AdminEditarAsesor_label'> Telefono * </label>
                     <input className='AdminEditarAsesor_input' type='text' placeholder='Telefono *' required/>
-                    <label className='AdminEditarAsesor_label'> Correo * </label>
                     <input className='AdminEditarAsesor_input' type='email' placeholder='Correo *' required/>
                 </form>
                 <div className='AdminEditarAsesor_div'>
