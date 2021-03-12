@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ProspectoPantalla from './Pantallas/prospectoPantalla/prospectoPantalla';
 import LoginPantalla from './Pantallas/LoginPantalla/LoginPantalla';
 import Compromiso from './Componentes/catalogoCompromiso/catalogoCompromiso';
 import Contactos from './Componentes/CatalogoContactos/CatalogoContactos';
@@ -13,7 +14,7 @@ import Buscador from './Componentes/Buscador/Buscador';
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginPantalla />
+    <ProspectoPantalla/>
   </React.StrictMode>,
   document.getElementById('root')
 );

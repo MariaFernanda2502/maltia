@@ -1,0 +1,46 @@
+#contenido{
+    text-align: center;
+}
+.cajaEntradas{
+}
+section{
+    margin-top: 10%;
+}
+header h1{
+    font-family: K2D;
+}
+.botonFlecha{
+    display: inline-block;
+    margin-left: 30%;
+}
+input{
+    width: 60%;
+    border-style: none;
+    border-bottom: 1.5px solid black;
+    color: black;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 140%;
+}
+select{
+    width: 60%;
+    border-style: none;
+    border-bottom: 1.5px solid black;
+    color: black;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 140%;
+}
+
+.botones{
+    display: inline-block;
+    margin-bottom: 10%;
+}
+
+.botones :hover{
+    display: inline-block;
+    background-color: maroon;
+    color: white;
+}
