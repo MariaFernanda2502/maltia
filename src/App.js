@@ -14,34 +14,34 @@ import AnalistaReportes from './Pantallas/AnalistaReportes/AnalistaReportes';
 import AdminPrincipal from './Pantallas/AdminPrincipal/AdminPrincipal';
 import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
 import AdminNuevoAnalista from './Pantallas/AdminNuevoAnalista/AdminNuevoAnalista';
-import AdminEditarAsesor from './Pantallas/AdminEditarAsesor/AdminEditarAsesor';
 import AdminVerAnalistas from './Pantallas/AdminVerAnalistas/AdminVerAnalistas';
+import AdminVerAsesores from './Pantallas/AdminVerAsesores/AdminVerAsesores';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/admin/ver-asesor' exact>
-          <AdminVerAnalistas/>
-          <Link to='/admin'> Pagina ver asesores</Link>
+        <Route path='/analista' exact>
+          <AnalistaPrincipal />
         </Route>
+        <Route path='/analista/reportes' exact>
+          <AnalistaReportes />
+        </Route>
+        <Route path='/admin/ver-asesores' exact>
+          <AdminVerAsesores />
+        </Route>
+        <Route path='/admin/ver-analistas' exact>
+          <AdminVerAnalistas />
+        </Route>
+
         <Route path='/admin/nuevo-asesor' exact>
           <AdminNuevoAsesor />
         </Route>
         <Route path='/admin/nuevo-analista' exact>
           <AdminNuevoAnalista />
         </Route>
-        <Route path='/admin/editar-asesor' exact>
-          <AdminEditarAsesor />
-        </Route>
-        <Route path='/admin' exact >
-          <AdminPrincipal  />
-        </Route>
-        <Route path='/analista' exact>
-          <AnalistaPrincipal />
-        </Route>
-        <Route path='/analista/reportes' exact>
-          <AnalistaReportes />
+        <Route path='/admin' exact>
+          <AdminPrincipal />
         </Route>
         <Route path='/' exact>
           <LoginPantalla/>

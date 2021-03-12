@@ -15,7 +15,7 @@ export default function AdminVerAsesores(props) {
             </header>
             <body className="ContenidoParaAdminVerAsesores">
                 <div className="CuadroNombreAsesor">
-                    <h3 className="NombreAsesorTitulo">Nombre del analista</h3>
+                    <h3 className="NombreAsesorTitulo">Nombre del asesor</h3>
                 </div>
                 <div className="DatosDeAdminVerAsesores">
                     <table>

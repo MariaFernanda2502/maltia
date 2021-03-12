@@ -17,10 +17,14 @@ import AdminVerAnalistas from './Pantallas/AdminVerAnalistas/AdminVerAnalistas';
 import AdminVerAsesores from './Pantallas/AdminVerAsesores/AdminVerAsesores';
 import BotonNuevoAsesor from './Componentes/BotonNuevoAsesor';
 import BotonNuevoAnalista from './Componentes/BotonNuevoAnalista/BotonNuevoAnalista';
+import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
+import AnalistaReportes from './Pantallas/AnalistaReportes/AnalistaReportes';
+import AnalistaPrincipal from './Pantallas/AnalistaPrincipal/AnalistaPrincipal';
+import AdminPrincipal from './Pantallas/AdminPrincipal/AdminPrincipal';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
