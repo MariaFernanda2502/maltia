@@ -1,12 +1,11 @@
 import REACT from 'react';
 import './CardPantallaPrincipal.css';
-import prestamos from './imgs/prestamos.jpeg';
 
-function CardPantallaPrincipal() {
+function CardPantallaPrincipal({imagenes, mensaje}) {
     return (
         <button className = 'Card'>
-            <img className = 'Imagen' src = {prestamos} />
-            <p className = 'Opcion'>Préstamos</p>
+            <img className = 'Imagen' src = {imagenes} />
+            <p className = 'Opcion'>{`${mensaje}`}</p>
         </button>
     )
 }
