@@ -15,13 +15,15 @@ import AdminPrincipal from './Pantallas/AdminPrincipal/AdminPrincipal';
 import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
 import AdminNuevoAnalista from './Pantallas/AdminNuevoAnalista/AdminNuevoAnalista';
 import AdminEditarAsesor from './Pantallas/AdminEditarAsesor/AdminEditarAsesor';
+import AdminVerAnalistas from './Pantallas/AdminVerAnalistas/AdminVerAnalistas';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/admin' exact>
-          <AdminPrincipal />
+        <Route path='/admin/ver-asesor' exact>
+          <AdminVerAnalistas/>
+          <Link to='/admin'> Pagina ver asesores</Link>
         </Route>
         <Route path='/admin/nuevo-asesor' exact>
           <AdminNuevoAsesor />
@@ -31,6 +33,9 @@ function App() {
         </Route>
         <Route path='/admin/editar-asesor' exact>
           <AdminEditarAsesor />
+        </Route>
+        <Route path='/admin' exact >
+          <AdminPrincipal  />
         </Route>
         <Route path='/analista' exact>
           <AnalistaPrincipal />

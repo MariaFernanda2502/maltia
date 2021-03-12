@@ -5,6 +5,8 @@ import './CardsSelectoras.css';
 
 import analistas from './imgs/analistas.png';
 import asesores from './imgs/asesores.png';
+import { defaultProps } from 'react-select/src/Select';
+import AdminVerAsesores from '../AdminVerAsesores/AdminVerAsesores';
 
 function AdminPrincipal() {
 
