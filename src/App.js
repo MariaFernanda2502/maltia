@@ -9,10 +9,11 @@ import {
   Switch,
 } from 'react-router-dom';
 import LoginPantalla from './Pantallas/LoginPantalla/LoginPantalla';
-import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
 import AnalistaPrincipal from './Pantallas/AnalistaPrincipal/AnalistaPrincipal';
 import AnalistaReportes from './Pantallas/AnalistaReportes/AnalistaReportes';
 import AdminPrincipal from './Pantallas/AdminPrincipal/AdminPrincipal';
+import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
+import AdminNuevoAnalista from './Pantallas/AdminNuevoAnalista/AdminNuevoAnalista';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path='/admin/nuevo-asesor' exact>
           <AdminNuevoAsesor />
+        </Route>
+        <Route path='/admin/nuevo-analista' exact>
+          <AdminNuevoAnalista />
         </Route>
         <Route path='/' exact>
           <LoginPantalla/>
