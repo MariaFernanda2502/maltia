@@ -9,6 +9,9 @@ import {
   Switch,
 } from 'react-router-dom';
 import LoginPantalla from './Pantallas/LoginPantalla/LoginPantalla';
+import AnalistaPrincipal from './Pantallas/AnalistaPrincipal/AnalistaPrincipal';
+import AnalistaReportes from './Pantallas/AnalistaReportes/AnalistaReportes';
+import AdminPrincipal from './Pantallas/AdminPrincipal/AdminPrincipal';
 import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
 import AdminNuevoAnalista from './Pantallas/AdminNuevoAnalista/AdminNuevoAnalista';
 import AdminEditarAsesor from './Pantallas/AdminEditarAsesor/AdminEditarAsesor';
@@ -17,6 +20,15 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path='/analista' exact>
+          <AnalistaPrincipal />
+        </Route>
+        <Route path='/analista/reportes' exact>
+          <AnalistaReportes />
+        </Route>
+        <Route path='/admin' exact>
+          <AdminPrincipal />
+        </Route>
         <Route path='/admin/nuevo-asesor' exact>
           <AdminNuevoAsesor />
         </Route>
