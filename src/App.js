@@ -20,12 +20,6 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/analista' exact>
-          <AnalistaPrincipal />
-        </Route>
-        <Route path='/analista/reportes' exact>
-          <AnalistaReportes />
-        </Route>
         <Route path='/admin' exact>
           <AdminPrincipal />
         </Route>
@@ -37,6 +31,12 @@ function App() {
         </Route>
         <Route path='/admin/editar-asesor' exact>
           <AdminEditarAsesor />
+        </Route>
+        <Route path='/analista' exact>
+          <AnalistaPrincipal />
+        </Route>
+        <Route path='/analista/reportes' exact>
+          <AnalistaReportes />
         </Route>
         <Route path='/' exact>
           <LoginPantalla/>
