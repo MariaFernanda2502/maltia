@@ -1,3 +1,4 @@
+import React from 'react';
 import Select from 'react-select';
 import { Tiendas } from '../AdminNuevoAsesor/Tiendas';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
