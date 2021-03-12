@@ -1,4 +1,5 @@
-import REACT from 'react';
+import Select from 'react-select';
+import { Tiendas } from './Tiendas';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import './AdminNuevoAsesor.css';
@@ -15,30 +16,28 @@ function AdminNuevoAsesor() {
 
     return (
         <div>
-            <header className='AdminNuevoAsesor_header'>
+            <header>
                 <FlechaRegresar/>
-                <div className='AdminNuevoAsesor_div'>
-                    <h1 className='AdminNuevoAsesor_h1'> Crear nuevo asesor</h1>
-                </div>
             </header>
             <body className='AdminNuevoAsesor_body'>
-                <div>
-                </div>
+                <h1 className='AdminNuevoAsesor_h1'> Crear un asesor</h1>
                 <form className='AdminNUevoAsesor_form'>
-                    <input className='AdminNuevoAsesor_input' type='text' placeholder='Nombre(s)*' required />
-                    <input className='AdminNuevoAsesor_input' type='text' placeholder='Apellidos'/>
-                    <input className='AdminNuevoAsesor_input' type='text' placeholder='Telefono'/>
-                    <input className='AdminNuevoAsesor_input' type='email' placeholder='Correo'/>
-                    <label>Puesto: </label>
-                    <div>
-                        <input type='radio' name='puesto'/> <div><p>Asesor</p> </div>
-                        <input type='radio' name='puesto'/> <div><p>Analista</p> </div>
-                    </div>
-                    <select className='AdminNuevoAsesor_input'>
-                        <option> --- </option>
-                        <option> Departamento </option>
-                    </select>
+                    <input className='AdminNuevoAsesor_input' type='text' placeholder='Nombre(s) *' required />
+                    <input className='AdminNuevoAsesor_input' type='text' placeholder='Apellidos *' required/>
+                    <input className='AdminNuevoAsesor_input' type='text' placeholder='Telefono *' required/>
+                    <input className='AdminNuevoAsesor_input' type='email' placeholder='Correo *' required/>
                 </form>
+                <div className='AdminNuevoAsesor_div'>
+                    <Select 
+                        defaultValue = {[Tiendas]}
+                        isMulti
+                        name='Tiendas'
+                        options={Tiendas}
+                        className='AdminNuevoAsesor_select'
+                        classNamePrefix="select"
+                        placeholder = 'Tiendas'
+                    />
+                </div>
                 <BotonGuardar/>
                 {guardadoExito}
             </body>
