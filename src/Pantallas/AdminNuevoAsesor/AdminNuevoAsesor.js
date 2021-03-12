@@ -16,7 +16,7 @@ function AdminNuevoAsesor() {
 
     return (
         <div>
-            <header className='AdminNuevoAsesor_header'>
+            <header>
                 <FlechaRegresar/>
             </header>
             <body className='AdminNuevoAsesor_body'>
@@ -31,7 +31,7 @@ function AdminNuevoAsesor() {
                     <Select 
                         defaultValue = {[Tiendas]}
                         isMulti
-                        name="Tiendas"
+                        name='Tiendas'
                         options={Tiendas}
                         className='AdminNuevoAsesor_select'
                         classNamePrefix="select"
