@@ -10,7 +10,13 @@ import Departamentos from './Componentes/catalogoDepartamentos/catalogoDepartame
 import Desactivar from './Componentes/desactivar/desactivar';
 import FlechaOpciones from './Componentes/FlechaOpciones';
 import Buscador from './Componentes/Buscador/Buscador';
-import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
+import AsesorVerProspectos from './Pantallas/AsesorVerProspectos/AsesorVerProspectos';
+import BotonNuevoProspecto from './Componentes/BotonNuevoProspecto/BotonNuevoProspecto';
+import AnalistaVerPrestatarios from './Pantallas/AnalistaVerPrestatarios/AnalistaVerPrestatarios';
+import AdminVerAnalistas from './Pantallas/AdminVerAnalistas/AdminVerAnalistas';
+import AdminVerAsesores from './Pantallas/AdminVerAsesores/AdminVerAsesores';
+import BotonNuevoAsesor from './Componentes/BotonNuevoAsesor';
+import BotonNuevoAnalista from './Componentes/BotonNuevoAnalista/BotonNuevoAnalista';
 
 ReactDOM.render(
   <React.StrictMode>

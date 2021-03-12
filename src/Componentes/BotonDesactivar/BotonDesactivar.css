@@ -1,12 +1,16 @@
 .BotonDesactivarBoton{
-    width: 63px;
+    width: 64px;
     height: 31px;
-    border-radius: 14px;
-    background: #fff;
     font-family: K2D;
     font-style: normal;
     font-weight: 100;
-    font-size: 10px;
-    line-height: 13px;
+    font-size: 13px;
+    line-height: 17px;
+    left: 0%;
+    right: 51.61%;
+    top: 0%;
+    bottom: 0%;
+    background: #fff;
     border: 1px solid #000;
+    border-radius: 14px;
 }
