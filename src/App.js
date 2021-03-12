@@ -11,6 +11,7 @@ import {
 import LoginPantalla from './Pantallas/LoginPantalla/LoginPantalla';
 import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
 import AdminNuevoAnalista from './Pantallas/AdminNuevoAnalista/AdminNuevoAnalista';
+import AdminEditarAsesor from './Pantallas/AdminEditarAsesor/AdminEditarAsesor';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path='/admin/nuevo-analista' exact>
           <AdminNuevoAnalista />
+        </Route>
+        <Route path='/admin/editar-asesor' exact>
+          <AdminEditarAsesor />
         </Route>
         <Route path='/' exact>
           <LoginPantalla/>
