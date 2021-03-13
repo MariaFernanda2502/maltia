@@ -1,11 +1,11 @@
-.buscar{
+.Buscador_div{
     display: flex;
     justify-content: flex-end;
     padding: 15px;
 }
 
-.buscar input {
-    width: 321px;
+.Buscador_div input {
+    width: 300px;
     height: 37px;
     padding: 0 70px 0 15px;
     font-size: 18px;
@@ -18,27 +18,31 @@
     filter: drop-shadow(0px 2px 2px #000);
 }
 
-.imagen button{
+.Buscador_imagen button{
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
     width: 35px;
     height: 30px;
     line-height: 20px;
     text-align: center;
     color:white;
+    background: #fff;
     border-radius: 50%;
     cursor: pointer;
     border: 0;
 }
 
-.imagen2 button{
+.Buscador_imagen2 button{
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     width: 35px;
     height: 30px;
     line-height: 20px;
     text-align: center;
     color:white;
+    background: #fff;
     border-radius: 50%;
     cursor: pointer;
     border: 0;
@@ -49,7 +53,7 @@
     height: 20px;
 }
 
-#filtrar {
+#iconoFiltrar {
     width: 22px;
     height: 22px;
 }

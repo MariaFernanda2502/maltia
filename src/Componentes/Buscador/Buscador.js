@@ -5,13 +5,13 @@ import iconoFiltrar from './iconoFiltrar.png';
 
 function Buscador() {
     return (
-        <div className='buscar'>
+        <div className='Buscador_div'>
             <input type='search' placeholder='Buscar:'/>
-            <div className='imagen'>
+            <div className='Buscador_imagen'>
                 <button> <img src={iconoBuscar} id='iconoBuscar'/> </button>
             </div>
-            <div className='imagen2'>
-                <button> <img src={iconoFiltrar} id='filtrar' /> </button>
+            <div className='Buscador_imagen2'>
+                <button> <img src={iconoFiltrar} id='iconoFiltrar' /> </button>
             </div>
         </div>
     )

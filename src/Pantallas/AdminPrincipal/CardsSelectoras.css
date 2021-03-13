@@ -1,0 +1,29 @@
+*{
+    margin:  0;
+    padding: 0;
+}
+
+.PantallaCardsSelectoras_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    top: 0;
+    bottom: 0;
+}
+
+.PantallaCardsSelectoras_cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+}
+
+.Adminprincipal_link{
+    display: flex;
+    justify-content: center;
+}
