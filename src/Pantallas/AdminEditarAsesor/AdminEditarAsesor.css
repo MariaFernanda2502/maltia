@@ -9,22 +9,15 @@
     display: flex;
     font-family: K2D;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 16px;
     line-height: 21px;
     margin: 0 0 30px 0;
 }
 
-.AdminEditarAsesor_div {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
-
 .AdminEditarAsesor_form {
     display: flex;
     flex-direction: column;
-    align-content: center;
 }
 
 .AdminEditarAsesor_input {
@@ -42,10 +35,32 @@
     border-left: 0;
 }
 
+.AdminEditarAsesor_div {
+    display: flex;
+    flex-direction: row;
+}
+
+.AdminEditarAsesor_label {
+    width: 40%;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 21px;
+}
+
 .AdminEditarAsesor_select {
     width: 280px;
     height: 30px;
     margin-bottom: 70px;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.AdminNuevoAsesor_la {
     font-family: K2D;
     font-style: normal;
     font-weight: 100;

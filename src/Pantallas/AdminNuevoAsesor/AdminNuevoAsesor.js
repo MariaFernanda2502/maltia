@@ -32,6 +32,7 @@ function AdminNuevoAsesor() {
                     <input className='AdminNuevoAsesor_input' type='email' placeholder='Correo *' required/>
                 </form>
                 <div className='AdminNuevoAsesor_div'>
+                    <label className='AdminNuevoAsesor_la'>Tiendas</label>
                     <Select 
                         defaultValue = {[Tiendas]}
                         isMulti

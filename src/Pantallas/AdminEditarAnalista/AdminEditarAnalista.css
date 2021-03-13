@@ -18,13 +18,12 @@
 .AdminEditarAnalista_form {
     display: flex;
     flex-direction: column;
-    align-content: center;
 }
 
 .AdminEditarAnalista_input {
     display: flex;
-    margin-bottom: 90px;
-    width: 270px;
+    margin-bottom: 70px;
+    width: 75%;
     height: 30px;
     font-family: K2D;
     font-style: normal;
@@ -34,4 +33,37 @@
     border-top: 0;
     border-right: 0;
     border-left: 0;
+}
+
+.AdminEditarAnalista_div {
+    display: flex;
+    flex-direction: row;
+}
+
+.AdminEditarAnalista_label {
+    width: 40%;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.AdminEditarAnalista_select {
+    width: 280px;
+    height: 30px;
+    margin-bottom: 35px;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.AdminEditarAnalista_la {
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 21px;
 }

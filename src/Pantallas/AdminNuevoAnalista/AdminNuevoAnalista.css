@@ -5,6 +5,7 @@
     justify-content: center;
 }
 
+
 .AdminNuevoAnalista_h1 {
     display: flex;
     font-family: K2D;
@@ -23,7 +24,7 @@
 
 .AdminNuevoAnalista_input {
     display: flex;
-    margin-bottom: 90px;
+    margin-bottom: 75px;
     width: 270px;
     height: 30px;
     font-family: K2D;
@@ -34,4 +35,12 @@
     border-top: 0;
     border-right: 0;
     border-left: 0;
+}
+
+.AdminNuevoAnalista_la {
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 21px;
 }
