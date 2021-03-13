@@ -7,6 +7,9 @@ import LoginPantalla from './Pantallas/LoginPantalla/LoginPantalla';
 import Desactivar from './Componentes/desactivar/desactivar';
 import Buscador from './Componentes/Buscador/Buscador';
 import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
+import AnalistaVerPrestatarios from './Pantallas/AnalistaVerPrestatarios/AnalistaVerPrestatarios';
+import AsesorVerProspectos from './Pantallas/AsesorVerProspectos/AsesorVerProspectos';
+import AdminVerAnalistas from './Pantallas/AdminVerAnalistas/AdminVerAnalistas';
 
 ReactDOM.render(
   <React.StrictMode>

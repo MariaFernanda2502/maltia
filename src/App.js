@@ -18,13 +18,21 @@ import AdminVerAnalistas from './Pantallas/AdminVerAnalistas/AdminVerAnalistas';
 import AdminVerAsesores from './Pantallas/AdminVerAsesores/AdminVerAsesores';
 import AdminEditarAsesor from './Pantallas/AdminEditarAsesor/AdminEditarAsesor';
 import AdminEditarAnalista from './Pantallas/AdminEditarAnalista/AdminEditarAnalista';
+import AsesorVerProspectos from './Pantallas/AsesorVerProspectos/AsesorVerProspectos';
+import AnalistaVerPrestatarios from './Pantallas/AnalistaVerPrestatarios/AnalistaVerPrestatarios';
 
 function App() {
   return (
     <Router>
       <Switch>
+      <Route path='/Asesor' exact>
+          <AsesorVerProspectos />
+        </Route>
         <Route path='/analista' exact>
           <AnalistaPrincipal />
+        </Route>
+        <Route path='/analista/ver-prestatarios' exact>
+          <AnalistaVerPrestatarios />
         </Route>
         <Route path='/analista/reportes' exact>
           <AnalistaReportes />

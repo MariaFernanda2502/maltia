@@ -30,7 +30,7 @@ export default function AnalistaVerPrestatarios(props) {
                            <div className="ElementosDeTablaAnalistaprest">
                               <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
                               <td className="EditarDatosAnalista"><BotonEditar /></td>
-                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
+                              <td className="EstatusPesonaAnalista"><BotonEstatus estatus="aprobado"/></td>
                            </div>
                         </tr>
                         <tr className="ElementosTablaPrestatarioAnalista">
@@ -44,7 +44,7 @@ export default function AnalistaVerPrestatarios(props) {
                            <div className="ElementosDeTablaAnalistaprest">
                               <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
                               <td className="EditarDatosAnalista"><BotonEditar /></td>
-                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
+                              <td className="EstatusPesonaAnalista"><BotonEstatus estatus="rechazado"/></td>
                            </div>
                         </tr>
                         <tr className="ElementosTablaPrestatarioAnalista">
