@@ -20,6 +20,7 @@ import AdminEditarAsesor from './Pantallas/AdminEditarAsesor/AdminEditarAsesor';
 import AdminEditarAnalista from './Pantallas/AdminEditarAnalista/AdminEditarAnalista';
 import AsesorVerProspectos from './Pantallas/AsesorVerProspectos/AsesorVerProspectos';
 import AnalistaVerPrestatarios from './Pantallas/AnalistaVerPrestatarios/AnalistaVerPrestatarios';
+import EditarPrestatario2 from './Pantallas/editarPrestatario2/editarPrestatario2';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path='/analista/ver-prestatarios' exact>
           <AnalistaVerPrestatarios />
+        </Route>
+        <Route path='/analista/ver-prestatarios/editar' exact>
+          <EditarPrestatario2 />
         </Route>
         <Route path='/analista/reportes' exact>
           <AnalistaReportes />
@@ -57,6 +61,9 @@ function App() {
         </Route>
         <Route path='/admin' exact>
           <AdminPrincipal />
+        </Route>
+        <Route path='/noImplementado' exact>
+          No hemos hecho nada aqui :c
         </Route>
         <Route path='/' exact>
           <LoginPantalla/>

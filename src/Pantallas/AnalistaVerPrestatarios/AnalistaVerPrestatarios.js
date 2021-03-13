@@ -4,13 +4,14 @@ import BotonEditar from '../../Componentes/BotonEditar/BotonEditar';
 import BotonEstatus from '../../Componentes/BotonEstatus/BotonEstatus';
 import Buscador from '../../Componentes/Buscador/Buscador';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
+import { Link } from 'react-router-dom';
 
 export default function AnalistaVerPrestatarios(props) {
     return (
         <div className="GeneralVerPrestatarios">
             <header className="BuscadorAnalistas">
-                <FlechaRegresar />
-                <Buscador />
+            <Link to='/analista'><FlechaRegresar /></Link>    
+            <Buscador />
             </header>
 
             <body className="ContenidoTablaParaAnalistas">
@@ -22,35 +23,35 @@ export default function AnalistaVerPrestatarios(props) {
                         <tr className="ElementosTablaPrestatarioAnalista">
                            <div className="ElementosDeTablaAnalistaprest">
                               <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
                               <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
                            </div>
                         </tr>
                         <tr className="ElementosTablaPrestatarioAnalista">
                            <div className="ElementosDeTablaAnalistaprest">
                               <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
                               <td className="EstatusPesonaAnalista"><BotonEstatus estatus="aprobado"/></td>
                            </div>
                         </tr>
                         <tr className="ElementosTablaPrestatarioAnalista">
                            <div className="ElementosDeTablaAnalistaprest">
                               <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
                               <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
                            </div>
                         </tr>
                         <tr className="ElementosTablaPrestatarioAnalista">
                            <div className="ElementosDeTablaAnalistaprest">
                               <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
                               <td className="EstatusPesonaAnalista"><BotonEstatus estatus="rechazado"/></td>
                            </div>
                         </tr>
                         <tr className="ElementosTablaPrestatarioAnalista">
                            <div className="ElementosDeTablaAnalistaprest">
                               <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <td className="EditarDatosAnalista"><BotonEditar /></td>
+                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
                               <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
                            </div>
                         </tr>
