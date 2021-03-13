@@ -1,0 +1,75 @@
+#contenido{
+    text-align: center;
+}
+
+.cajaEntradas section{
+    margin-top: 3%;
+    
+}
+header h1{
+    font-family: K2D;
+}
+.cajaEntradas p{
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+    border-style: none;
+    border-bottom: 1.5px solid black;
+    color: black;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+}
+.cajaEntradas input{
+    width: 45%;
+    display: inline-block;
+    border-style: none;
+    color:black;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.cajaEntradas input::placeholder{
+    color: black;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+
+
+.cajaEntradas select{
+    width: 60%;
+    border-style: none;
+    border-bottom: 1.5px solid black;
+    color: black;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+.dir{
+    width: 65% !important;
+}
+.zor{
+    width: 30% !important;
+}
+.referencia{
+    width: 40% !important;
+}
+
+.botones{
+    display: inline-block;
+    margin-bottom: 10%;
+}
+
+.botones :hover{
+    display: inline-block;
+    background-color: maroon;
+    color: pink;
+}

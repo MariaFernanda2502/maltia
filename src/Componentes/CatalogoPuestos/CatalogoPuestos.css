@@ -5,9 +5,12 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     font-family: K2D;
     font-style: normal;
     font-size: 16px;
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
 }
 
 .puestos{

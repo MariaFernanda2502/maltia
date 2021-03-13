@@ -14,7 +14,7 @@ function prospectoPantalla(){
             </header>
             <div className="cajaEntradas">
                 <section>
-                    <input type="text" placeholder="Nombres(s)*"> 
+                    <input type="text" placeholder="Nombres(s)*">
                     </input>
                 </section> 
                 <section>

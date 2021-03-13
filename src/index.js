@@ -11,10 +11,12 @@ import Departamentos from './Componentes/catalogoDepartamentos/catalogoDepartame
 import Desactivar from './Componentes/desactivar/desactivar';
 import FlechaOpciones from './Componentes/FlechaOpciones';
 import Buscador from './Componentes/Buscador/Buscador';
-
+import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
+import EditarPrestatario from './Pantallas/editarPrestatario/editarPrestatario';
+import EditarPrestatario2 from './Pantallas/editarPrestatario2/editarPrestatario2'
 ReactDOM.render(
   <React.StrictMode>
-    <ProspectoPantalla/>
+    <EditarPrestatario2/>
   </React.StrictMode>,
   document.getElementById('root')
 );
