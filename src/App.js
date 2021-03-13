@@ -21,12 +21,20 @@ import AdminEditarAnalista from './Pantallas/AdminEditarAnalista/AdminEditarAnal
 import AsesorVerProspectos from './Pantallas/AsesorVerProspectos/AsesorVerProspectos';
 import AnalistaVerPrestatarios from './Pantallas/AnalistaVerPrestatarios/AnalistaVerPrestatarios';
 import EditarPrestatario2 from './Pantallas/editarPrestatario2/editarPrestatario2';
+import ProspectoPantalla from './Pantallas/prospectoPantalla/prospectoPantalla';
+import EditarPrestatario from './Pantallas/editarPrestatario/editarPrestatario';
 
 function App() {
   return (
     <Router>
       <Switch>
-      <Route path='/Asesor' exact>
+        <Route path= '/asesor/nuevo-prospecto' exact>
+          <ProspectoPantalla/>
+        </Route>
+        <Route path='/asesor/editar-prospecto' exact>
+          <EditarPrestatario />
+        </Route>
+        <Route path='/asesor' exact>
           <AsesorVerProspectos />
         </Route>
         <Route path='/analista' exact>
@@ -67,6 +75,9 @@ function App() {
         </Route>
         <Route path='/' exact>
           <LoginPantalla/>
+        </Route>
+        <Route path='/'>
+          No encontramos tu pagina D:
         </Route>
       </Switch>
     </Router>
