@@ -12,7 +12,7 @@ function prospectoPantalla(){
                 </div>
                 <h1>Prospecto</h1>
             </header>
-            <div className="cajaEntradas">
+            <div className="cajaEntradasIn">
                 <section>
                     <input type="text" placeholder="Nombres(s)*">
                     </input>

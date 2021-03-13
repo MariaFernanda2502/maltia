@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-section{
+.cajaEntradasIn section{
     margin-top: 10%;
 }
 header h1{
@@ -12,7 +12,7 @@ header h1{
     display: inline-block;
     margin-left: 30%;
 }
-input{
+.cajaEntradasIn input{
     width: 60%;
     border-style: none;
     border-bottom: 1.5px solid black;
@@ -22,7 +22,7 @@ input{
     font-weight: normal;
     font-size: 140%;
 }
-select{
+.cajaEntradasIn select{
     width: 60%;
     border-style: none;
     border-bottom: 1.5px solid black;
