@@ -61,10 +61,10 @@ function App() {
         <Route path='/admin/nuevo-analista' exact>
           <AdminNuevoAnalista />
         </Route>
-        <Route path = '/admin/ver-asesores'>
+        <Route path = '/admin/ver-asesores' exact>
           <AdminVerAsesores />
         </Route>
-        <Route path = '/admin/ver-analistas'>
+        <Route path = '/admin/ver-analistas' exact>
           <AdminVerAnalistas />
         </Route>
         <Route path='/admin' exact>
