@@ -1,53 +1,66 @@
-.PrincipalAsesores{
+.AesorVerProspectos{
     display: flex;
     flex-direction: column;
 }
 
-.BuscadorParaAsesores{
+.AsesorHeader{
     position: sticky;
     display: flex;
     justify-content: center;
 }
 
-.TablaParaAsesores{
-    height: 300px;
+.ContenidoParaAsesorVerProspectos{
+    height: auto;
     display: flex;
     flex-direction: column;
     margin: auto;
     border: 2px solid #000;
-    border-radius: 25px;
-    width: 400px;
+    border-radius: 15px;
+    width: 357px;
+    margin-bottom: 20px;
 }
 
-.Nombreprosp{
-    left: 100%;
-    width: 319.04px;
-    height: 30.5px;
+.CuadroNombreProspectos{
+    border-bottom: 1px solid #000;
+    text-align: left;
+    margin-left: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.NombreProspectoTitulo{
     font-family: K2D;
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
     line-height: 23px;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-bottom: 0;
 }
 
-.LineaSeparadora{
-    margin: 0;
+.nombreDeProspecto{
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 13px;
+    line-height: 17px;
+    width: 250px;
+
+}
+
+.InforamcionDeTablaAsesorProspecto{
+    width: 354px;
+    height: 35px;
+    border-bottom: 1px solid #000;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0px;
+    margin-top: 0px;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
-.EditarDatos, .EstatusPesona{
-    margin-right: -2000px
-}
-
-.FooterAsesores{
-    position: sticky;
+.FooterAsesorVerProspecto{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 20px;
+    justify-content: center;
 }

@@ -24,6 +24,8 @@
     border-bottom: 1px solid #000;
     text-align: left;
     margin-left: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .NombreprestaAna{
@@ -41,6 +43,7 @@
     font-size: 13px;
     line-height: 17px;
     width: 250px;
+
 }
 
 .ElementosDeTablaAnalistaprest{
@@ -51,4 +54,6 @@
     margin-right: 0;
     margin-bottom: 0px;
     margin-top: 0px;
+    display: flex;
+    align-items: center;
 }
