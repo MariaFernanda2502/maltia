@@ -3,13 +3,15 @@ import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import Interruptor from '../../Componentes/InterruptorBooleano/InterruptorBooleano';
 import './editarPrestatario.css';
+import {Link} from 'react-router-dom';
 
 function EditarPrestatario({idPrestatario,nombre,apellidos,telefono,fecha, direccion,noZorro,credito,nomRef1,numRef1, nomRef2, numRef2}){
     return(
         <div id="contenido">
             <header>
-
-                <FlechaRegresar />
+                <nav>
+                    <Link to = "/asesor"><FlechaRegresar /></Link>
+                </nav>
                 <h1>Prospecto #{idPrestatario}</h1>
             </header>
             <div className="cajaEntradas">

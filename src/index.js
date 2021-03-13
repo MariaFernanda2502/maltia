@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ProspectoPantalla from './Pantallas/prospectoPantalla/prospectoPantalla';
 import LoginPantalla from './Pantallas/LoginPantalla/LoginPantalla';
 import Desactivar from './Componentes/desactivar/desactivar';
 import Buscador from './Componentes/Buscador/Buscador';
@@ -11,11 +10,11 @@ import AdminNuevoAsesor from './Pantallas/AdminNuevoAsesor/AdminNuevoAsesor';
 
 import EditarPrestatario from './Pantallas/editarPrestatario/editarPrestatario';
 import EditarPrestatario2 from './Pantallas/editarPrestatario2/editarPrestatario2'
+import ProspectoPantalla from './Pantallas/prospectoPantalla/prospectoPantalla';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

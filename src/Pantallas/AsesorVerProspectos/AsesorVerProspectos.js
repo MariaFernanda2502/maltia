@@ -25,7 +25,7 @@ export default function AsesorVerProspectos(props) {
                                 <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAsesor">
                                     <nav>
-                                        <Link to = "/admin/editar-analista"><BotonEditar /></Link>
+                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
                                     </nav>
                                 </td>
                                 <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
@@ -36,7 +36,7 @@ export default function AsesorVerProspectos(props) {
                                 <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAsesor">
                                     <nav>
-                                        <Link to = "/admin/editar-analista"><BotonEditar /></Link>
+                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
                                     </nav>
                                 </td>
                                 <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
@@ -47,7 +47,7 @@ export default function AsesorVerProspectos(props) {
                                 <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAsesor">
                                     <nav>
-                                        <Link to = "/admin/editar-analista"><BotonEditar /></Link>
+                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
                                     </nav>
                                 </td>
                                 <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
@@ -58,7 +58,7 @@ export default function AsesorVerProspectos(props) {
                                 <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAsesor">
                                     <nav>
-                                        <Link to = "/admin/editar-analista"><BotonEditar /></Link>
+                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
                                     </nav>
                                 </td>
                                 <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
@@ -69,7 +69,7 @@ export default function AsesorVerProspectos(props) {
                                 <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAsesor">
                                     <nav>
-                                        <Link to = "/admin/editar-analista"><BotonEditar /></Link>
+                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
                                     </nav>
                                 </td>
                                 <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
@@ -80,7 +80,7 @@ export default function AsesorVerProspectos(props) {
                                 <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAsesor">
                                     <nav>
-                                        <Link to = "/admin/editar-analista"><BotonEditar /></Link>
+                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
                                     </nav>
                                 </td>
                                 <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
@@ -91,7 +91,7 @@ export default function AsesorVerProspectos(props) {
                                 <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAsesor">
                                     <nav>
-                                        <Link to = "/admin/editar-analista"><BotonEditar /></Link>
+                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
                                     </nav>
                                 </td>
                                 <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
@@ -102,7 +102,7 @@ export default function AsesorVerProspectos(props) {
                                 <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
                                 <td className="BotonEditarParaAsesor">
                                     <nav>
-                                        <Link to = "/admin/editar-analista"><BotonEditar /></Link>
+                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
                                     </nav>
                                 </td>
                                 <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
@@ -113,7 +113,7 @@ export default function AsesorVerProspectos(props) {
             </body>
             <footer className="FooterAsesorVerProspecto">
                 <nav>
-                    <Link to = "/admin/nuevo-analista"><BotonNuevoProspecto /></Link>
+                    <Link to = "/asesor/nuevo-prospecto"><BotonNuevoProspecto /></Link>
                 </nav>
                 <Link to="/"><BotonCerrarSesion/></Link>
             </footer>

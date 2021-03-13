@@ -9,8 +9,8 @@ header h1{
     font-family: K2D;
 }
 .botonFlecha{
-    display: inline-block;
-    margin-left: 30%;
+    display: flex;
+    margin-left: 1%;
 }
 .cajaEntradasIn input{
     width: 60%;
@@ -36,6 +36,11 @@ header h1{
 .botones{
     display: inline-block;
     margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.botones div{
+    margin-top: 5%;
 }
 
 .botones :hover{

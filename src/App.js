@@ -20,12 +20,20 @@ import AdminEditarAsesor from './Pantallas/AdminEditarAsesor/AdminEditarAsesor';
 import AdminEditarAnalista from './Pantallas/AdminEditarAnalista/AdminEditarAnalista';
 import AsesorVerProspectos from './Pantallas/AsesorVerProspectos/AsesorVerProspectos';
 import AnalistaVerPrestatarios from './Pantallas/AnalistaVerPrestatarios/AnalistaVerPrestatarios';
+import ProspectoPantalla from './Pantallas/prospectoPantalla/prospectoPantalla';
+import EditarPrestatario from './Pantallas/editarPrestatario/editarPrestatario';
 
 function App() {
   return (
     <Router>
       <Switch>
-      <Route path='/Asesor' exact>
+        <Route path= '/asesor/nuevo-prospecto' exact>
+          <ProspectoPantalla/>
+        </Route>
+        <Route path='/asesor/editar-prospecto' exact>
+          <EditarPrestatario />
+        </Route>
+        <Route path='/asesor' exact>
           <AsesorVerProspectos />
         </Route>
         <Route path='/analista' exact>

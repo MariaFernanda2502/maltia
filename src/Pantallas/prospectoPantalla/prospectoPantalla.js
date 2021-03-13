@@ -3,12 +3,15 @@ import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import BotonCompletarSolicitud from '../../Componentes/BotonCompletarSolicitud/BotonCompletarSolicitud';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import './prospectoPantalla.css';
+import {Link} from 'react-router-dom';
 function prospectoPantalla(){
     return(
         <div id="contenido">
             <header>
                 <div className="botonFlecha">
-                    <FlechaRegresar />
+                    <nav>
+                        <Link to="/asesor"><FlechaRegresar /></Link>
+                    </nav>
                 </div>
                 <h1>Prospecto</h1>
             </header>
@@ -48,7 +51,9 @@ function prospectoPantalla(){
                 </section>
 
                 <section>
-                    <BotonCompletarSolicitud />
+                    <nav>
+                        <Link to="/asesor/editar-prospecto"><BotonCompletarSolicitud /></Link>
+                    </nav>
                 </section>
             </section>    
         </div>
