@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import '../../Componentes/BotonEditar/BotonEditar';
 import './AsesorVerProspectos.css';
 import BotonEditar from '../../Componentes/BotonEditar/BotonEditar';
@@ -9,6 +10,21 @@ import {Link} from 'react-router-dom';
 import BotonCerrarSesion from '../../Componentes/BotonCerrarSesion/BotonCerraSesion';
 
 export default function AsesorVerProspectos(props) {
+    const [prospectos, setProspectos] = useState([]);
+    const [prestatarios, setPrestatarios] = useState([]);
+    useEffect(()=>{
+        //get all users
+        axios.get('http://localhost:5000/asesor/lista-prospectos')
+        .then((result)=>{
+            setProspectos(result.data.data)
+        })
+        .catch((error)=>{})
+    },[])
+
+    useEffect(()=>{
+        axios.get('')
+    })
+
     return (
         <div className="AesorVerProspectos">
             <header className="AsesorHeader">
@@ -20,94 +36,21 @@ export default function AsesorVerProspectos(props) {
                 </div>
                 <div className="DatosAsesorProspecto">
                     <table>
-                        <tr className="ElementosAsesorProspecto">
-                            <div className="InforamcionDeTablaAsesorProspecto">
-                                <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor">
-                                    <nav>
-                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
-                                    </nav>
-                                </td>
-                                <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosAsesorProspecto">
-                            <div className="InforamcionDeTablaAsesorProspecto">
-                                <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor">
-                                    <nav>
-                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
-                                    </nav>
-                                </td>
-                                <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosAsesorProspecto">
-                            <div className="InforamcionDeTablaAsesorProspecto">
-                                <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor">
-                                    <nav>
-                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
-                                    </nav>
-                                </td>
-                                <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosAsesorProspecto">
-                            <div className="InforamcionDeTablaAsesorProspecto">
-                                <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor">
-                                    <nav>
-                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
-                                    </nav>
-                                </td>
-                                <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosAsesorProspecto">
-                            <div className="InforamcionDeTablaAsesorProspecto">
-                                <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor">
-                                    <nav>
-                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
-                                    </nav>
-                                </td>
-                                <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosAsesorProspecto">
-                            <div className="InforamcionDeTablaAsesorProspecto">
-                                <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor">
-                                    <nav>
-                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
-                                    </nav>
-                                </td>
-                                <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosAsesorProspecto">
-                            <div className="InforamcionDeTablaAsesorProspecto">
-                                <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor">
-                                    <nav>
-                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
-                                    </nav>
-                                </td>
-                                <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
-                            </div>
-                         </tr>
-                         <tr className="ElementosAsesorProspecto">
-                            <div className="InforamcionDeTablaAsesorProspecto">
-                                <td className="nombreDeProspecto">Efren Aldana Escalona  </td>
-                                <td className="BotonEditarParaAsesor">
-                                    <nav>
-                                        <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
-                                    </nav>
-                                </td>
-                                <td className="BotonEstatusparaAsesor"><BotonEstatus/></td>
-                            </div>
-                         </tr>
+                        {prospectos.length > 0 && prospectos.map((prospecto)=>{
+                            return(
+                                <tr className="ElementosAsesorProspecto">
+                                    <div className="InforamcionDeTablaAsesorProspecto">
+                                        <td className="nombreDeProspecto" key={prospecto.prospectId}>{prospecto.nombre} {prospecto.apellidoPaterno} {prospecto.apellidoMaterno}</td>
+                                        <td className="BotonEditarParaAsesor">
+                                            <nav>
+                                                <Link to = "/asesor/editar-prospecto"><BotonEditar /></Link>
+                                            </nav>
+                                        </td>
+                                        <td className="BotonEstatusparaAsesor"><BotonEstatus /></td>
+                                    </div>
+                                </tr>
+                            )
+                        })}
                     </table>
                 </div>
             </body>
