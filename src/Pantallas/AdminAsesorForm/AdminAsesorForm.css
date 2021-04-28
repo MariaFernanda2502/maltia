@@ -67,3 +67,8 @@
     font-size: 16px;
     line-height: 21px;
 }
+
+.contenedorAlert {
+    border-radius: 40px;
+    border: 1px black;
+}

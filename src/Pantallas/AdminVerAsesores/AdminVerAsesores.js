@@ -42,7 +42,7 @@ export default function AdminVerAsesores(props) {
 
         axios({
             method: 'get',
-            url: `http://localhost:5000/admin/analistas?${queryString}`,
+            url: `http://localhost:5000/admin/asesores?${queryString}`,
         })
             .then((result) => {
                 setAsesores(result.data.data)
@@ -95,14 +95,15 @@ export default function AdminVerAsesores(props) {
                     <nav>
                         <Link to="/admin"><FlechaRegresar /></Link>
                     </nav>
-                    <form onSubmit={handleSearch}>
-                        <label> Buscador: </label>
+                    <form onSubmit={handleSearch} className='Buscador_div'>
                         <input 
+                            className='Buscador_div'
                             type="text"
-                            placeholder="Introduce tu busqueda"
+                            placeholder="Introduce tu búsqueda"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
+                        <button>Buscar</button>
                     </form>
                 </header>
                 <body className="ContenidoParaAdminVerAsesores">
@@ -126,8 +127,11 @@ export default function AdminVerAsesores(props) {
                                                 </nav>
                                             </td>
                                             <td className="BotonDesactivarParaAsesor"> 
-                                                <button type="button" onClick={() => handleDelete(asesor.userId)}>
-                                                    Eliminar
+                                                <button 
+                                                    type="button" 
+                                                    className='BotonDesactivarBoton' 
+                                                    onClick={() => handleDelete(asesor.userId)}>
+                                                    Desactivar
                                                 </button>
                                             </td>
                                         </div>

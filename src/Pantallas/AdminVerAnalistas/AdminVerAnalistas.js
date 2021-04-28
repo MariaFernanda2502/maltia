@@ -55,7 +55,7 @@ export default function AdminVerAnalistas(props) {
     }
 
     function handleDelete(userId) {
-        axios.delete(`http://localhost:5000/admin//analistas/eliminar/${userId}`)
+        axios.delete(`http://localhost:5000/admin/analistas/eliminar/${userId}`)
         
             .then((result) => {
                 const newAnalistas = analistas.filter((analista) => analista.userId !== userId)
@@ -95,14 +95,15 @@ export default function AdminVerAnalistas(props) {
                     <nav>
                         <Link to = "/admin"><FlechaRegresar /></Link>
                     </nav>
-                    <form onSubmit={handleSearch}>
-                        <label> Buscador: </label>
+                    <form onSubmit={handleSearch} className='Buscador_div'>
                         <input 
+                            className='Buscador_div'
                             type="text"
-                            placeholder="Introduce tu busqueda"
+                            placeholder="Introduce tu búsqueda"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
+                        <button>Buscar</button>
                     </form>
                 </header>
                 <body className="ContenidoParaAdminVerAnalistas">
@@ -126,8 +127,11 @@ export default function AdminVerAnalistas(props) {
                                                 </nav>
                                             </td>
                                             <td className="BotonDesactivarParaAnalista">
-                                                <button type="button" onClick={() => handleDelete(analista.userId)}>
-                                                    Eliminar
+                                                <button 
+                                                    className='BotonDesactivarBoton'
+                                                    type="button" 
+                                                    onClick={() => handleDelete(analista.userId)}>
+                                                    Desactivar
                                                 </button>
                                             </td>
                                         </div>

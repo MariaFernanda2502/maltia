@@ -1,20 +1,15 @@
 import Select from 'react-select';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
+import '../../Componentes/BotonGuardar/BotonGuardar.css';
 import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import './AdminAsesorForm.css';
 import VentanaGuardado from '../../Componentes/VentanaGuardado/VentanaGuardado';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 function AdminAsesorForm(props) {
-    let guardadoExito = null;
-    let mostrarGuardado = false;
-    
-    if (mostrarGuardado) {
-        guardadoExito = <VentanaGuardado/>;
-    } 
-
     const [asesor, setAsesor] = useState(props.asesor);
     const [status, setStatus] = useState('pristine');
     const [error, setError] = useState(null);
@@ -57,6 +52,16 @@ function AdminAsesorForm(props) {
             .then((result) => {
                 props.onSave(result.data.data)
                 setStatus('pristine')
+                swal({
+                    title: "Guardado con exito",
+                    icon: "success",
+                    width:'50%',
+                    backdrop: true,
+                    customClass: {
+                        popup: 'contenedorAlert',
+                    },
+                    confirmButtonColor: '#FBFCFC'
+                  });
             })
             .catch (error => {
                 setError(error)
@@ -101,7 +106,7 @@ function AdminAsesorForm(props) {
                             />
                         </div>
                         <div className='AdminEditarAsesor_div'>
-                            <label htmlFor='apellidoPaterno' className='AdminEditarAsesor_label'>Apellidos *</label>
+                            <label htmlFor='apellidoPaterno' className='AdminEditarAsesor_label'>Apellidos Paterno *</label>
                             <input 
                                 name='apellidoPaterno'
                                 className='AdminEditarAsesor_input' 
@@ -123,7 +128,7 @@ function AdminAsesorForm(props) {
                             />
                         </div>
                         <div className='AdminEditarAsesor_div'>
-                            <label htmlFor='telefono' className='AdminEditarAsesor_label'>Telefono *</label>
+                            <label htmlFor='telefono' className='AdminEditarAsesor_label'>Teléfono *</label>
                             <input 
                                 name='telefono' 
                                 className='AdminEditarAsesor_input' 
@@ -159,15 +164,17 @@ function AdminAsesorForm(props) {
                     </div>
                     { (status === 'dirty') 
                         ? (
-                            <button
-                                type='submit'
-                                className='button' 
-                                onClick={handleSave}> 
-                                Save
-                            </button>
+                            <div className='BotonGuardar'>
+                                <button 
+                                    type='submit' 
+                                    className='BotonGuardar'
+                                    onClick={handleSave}
+                                > 
+                                    Guardar
+                                </button>
+                            </div>
                         ) : null
                     } 
-                    {guardadoExito}
                 </body>
             </div>
         )

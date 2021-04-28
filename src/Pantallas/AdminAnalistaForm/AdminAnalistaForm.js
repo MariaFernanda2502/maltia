@@ -6,6 +6,7 @@ import VentanaGuardado from '../../Componentes/VentanaGuardado/VentanaGuardado';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 function AdminAnalistaForm(props) {
     let guardadoExito = null;
@@ -57,6 +58,16 @@ function AdminAnalistaForm(props) {
             .then((result) => {
                 props.onSave(result.data.data)
                 setStatus('pristine')
+                swal({
+                    title: "Guardado con exito",
+                    icon: "success",
+                    width:'50%',
+                    backdrop: true,
+                    customClass: {
+                        popup: 'contenedorAlert',
+                    },
+                    confirmButtonColor: '#FBFCFC'
+                  });
             })
             .catch (error => {
                 setError(error)
@@ -157,12 +168,14 @@ function AdminAnalistaForm(props) {
                     </div>
                     { (status === 'dirty') 
                         ? (
-                            <button
-                                type='submit'
-                                className='button' 
-                                onClick={handleSave}> 
-                                Save
-                            </button>
+                            <div className='BotonGuardar'>
+                                <button
+                                    type='submit'
+                                    className='BotonGuardar' 
+                                    onClick={handleSave}> 
+                                    Guardar
+                                </button>
+                            </div>
                         ) : null
                     } 
                     {guardadoExito}
