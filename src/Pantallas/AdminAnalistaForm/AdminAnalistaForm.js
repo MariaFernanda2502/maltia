@@ -20,6 +20,10 @@ function AdminAnalistaForm(props) {
     const [status, setStatus] = useState('pristine');
     const [error, setError] = useState(null)
 
+    const options = [
+        { value: 'OFICINA CENTRAL', label: 'OFICINA CENTRAL' }
+      ]
+
     const {
         userId,
         nombre, 
@@ -158,9 +162,8 @@ function AdminAnalistaForm(props) {
                         
                         <label className='AdminEditarAnalista_la'>Departamento</label>
                         <Select 
-                            defaultValue = {['OFICINA CENTRAL']}
                             name='Departamentos'
-                            //options={Departamentos}
+                            options={options}
                             className='AdminEditarAnalista_select'
                             classNamePrefix="select"
                             placeholder = 'Departamentos'

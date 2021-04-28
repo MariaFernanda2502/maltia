@@ -5,7 +5,7 @@ import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import './AdminAsesorForm.css';
 import VentanaGuardado from '../../Componentes/VentanaGuardado/VentanaGuardado';
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 
@@ -13,6 +13,27 @@ function AdminAsesorForm(props) {
     const [asesor, setAsesor] = useState(props.asesor);
     const [status, setStatus] = useState('pristine');
     const [error, setError] = useState(null);
+    const [tiendas, setTiendas] = useState([]);
+
+    useEffect(() => { 
+        setError(null);
+        axios.get('http://localhost:5000/admin/tiendas')
+        .then((result) => {
+            setTiendas(result.data.data)
+        })
+        .catch((error) => {
+            setError(error)
+            setStatus('Error')
+        })
+    }, [])
+
+    const options = [
+        { value: 'CAZADOR COMERCIAL', label: 'CAZADOR COMERCIAL' },
+        { value: 'FLECHA ABARROTERA', label: 'FLECHA ABARROTERA' },
+        { value: 'PROFETA NAUCALPAN', label: 'PROFETA NAUCALPAN' },
+        { value: 'CAZADOR SANTA URSULA', label: 'CAZADOR SANTA URSULA' },
+        { value: 'ZORRO ALTA TENSION 2', label: 'ZORRO ALTA TENSION 2' }
+      ]
 
     const {
         userId,
@@ -152,15 +173,18 @@ function AdminAsesorForm(props) {
                     </form>
                     <div>
                         <label className='AdminEditarAsesor_la'>Tiendas</label>
-                        <Select 
-                            defaultValue = {['Tienda1']}
-                            isMulti
-                            name='Tiendas'
-                            //options={Tiendas}
-                            className='AdminEditarAsesor_select'
-                            classNamePrefix="select"
-                            placeholder = 'Tiendas'
-                        />
+                        <Select isMulti placeholder = 'Tiendas' className='AdminEditarAsesor_select' options={options}>
+                            {/*}
+                            {tiendas.map((tienda) => { 
+                                <option>
+                                    tienda='Zorro1'
+                                    tienda='Zorro2'
+                                    tienda='Zorro2'
+                                    tienda='Zorro2'
+                                    tienda='Zorro2'
+                                </option>
+                            }})} */}
+                        </Select>
                     </div>
                     { (status === 'dirty') 
                         ? (
