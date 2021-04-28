@@ -1,33 +1,143 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import BotonCompletarSolicitud from '../../Componentes/BotonCompletarSolicitud/BotonCompletarSolicitud';
-import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import './prospectoPantalla.css';
 import {Link} from 'react-router-dom';
-function prospectoPantalla(){
+import axios from 'axios';
+import '../AdminEditarAnalista/AdminEditarAnalista.css';
+
+function ProspectoPantalla(props){
+    
+    const [status,setStatus] =useState('pristine');
+    const [error, setError] = useState(null);
+    const [prospecto, setProspecto] = useState(props.prospecto);
+    const{prospectId, 
+        nombre, 
+        apellidoPaterno, 
+        apellidoMaterno, 
+        telefono
+    } = prospecto;
+
+    function handleChange(event){
+        let actualizar={
+            ...prospecto,
+            [event.target.name]: event.target.value, 
+        }
+        setProspecto(actualizar)
+        setStatus('dirty')
+    }
+
+    function handleSave(event){
+        event.preventDefault();
+        setStatus('loading')
+        const action = prospecto.prospectId ? 'patch' : 'post';
+        const url = prospecto.prospectId ? `http://localhost:5000/asesor/editar-prospectos/${prospecto.prospectId}` : `http://localhost:5000/asesor/crear-prospecto`;
+        axios({
+            method: action,
+            url: url,
+            data: prospecto,
+            headers:{
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+            .then((result)=>{
+                console.log(result.data.data.nombre)
+                //props.onSave(result.data.data)
+                setStatus('pristine')
+            })
+            .catch(error=>{
+                setError(error)
+                setStatus('error')
+            })
+    }
+
+    function complete(event){
+        //event.preventDefault();
+        setStatus('loading')
+        if(prospecto.prospectId){
+            const accion= 'post';
+            const url1= `http://localhost:5000/asesor/crear-prestatario/${prospecto.prospectId}`;
+            axios({
+                method: accion,
+                url: url1,
+                data: prospecto,
+                headers:{
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            })
+            .then((result)=>{
+                setStatus('pristine')
+            })
+            .catch(error =>{
+                setError(error)
+                setStatus('error')
+            })
+        }
+
+       /* else{
+            const accion= 'post';
+            const url1 = `http://localhost:5000/asesor/crear-prospecto`
+            axios({
+                method: accion,
+                url: url1,
+                data: prospecto,
+                headers:{
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            })
+            .then((result)=>{
+                setStatus('pristine')
+            })
+            .catch(error =>{
+                setError(error)
+                setStatus('error')
+            })
+            const url2= `http://localhost:5000/asesor/crear-prestatario/${prospecto.prospectId}`;
+            axios({
+                method: accion,
+                url: url2,
+                data: prospecto,
+                headers:{
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            })
+            .then((result)=>{
+                setStatus('pristine')
+            })
+            .catch(error =>{
+                setError(error)
+                setStatus('error')
+            })
+        }*/
+    }
+    if(status==='error'){
+        <h1>Error</h1>
+    }
+
+    if(status === 'loading'){
+        return <h1>Cargando..</h1>
+    }
+    if(status=== 'pristine' || status === 'dirty'){
     return(
         <div id="contenido">
-            <header>
-                <div className="botonFlecha">
-                    <nav>
-                        <Link to="/asesor"><FlechaRegresar /></Link>
-                    </nav>
-                </div>
-                <h1>Prospecto</h1>
-            </header>
-            <div className="cajaEntradasIn">
+            <form className="cajaEntradasIn" onSubmit={handleSave}>
                 <section>
-                    <input type="text" placeholder="Nombres(s)*">
-                    </input>
-                </section> 
-                <section>
-                    <input type="text" placeholder="Apellidos*"> 
-                    </input>
+                    <lable htmlFor="nombre" className="labels">Nombre</lable>
+                    <input type="text" name="nombre" value={nombre} onChange={handleChange}></input>
                 </section>
                 <section>
-                    <input type="text" placeholder="Teléfono*"> 
-                    </input>
+                    <lable htmlFor="apellidoPaterno" className="labels">Apellido Paterno</lable>
+                    <input type="text" name="apellidoPaterno" value={apellidoPaterno} onChange={handleChange}></input>
                 </section>
+                <section>
+                    <lable htmlFor="apellidoMaterno" className="labels">Apellido Materno</lable>
+                    <input type="text" name="apellidoMaterno" value={apellidoMaterno} onChange={handleChange}></input>
+                </section>
+                <section>
+                    <label htmlFor = "telefono" className="labels">Teléfono</label>
+                    <input type="text" name="telefono" value={telefono} onChange={handleChange}></input>
+                </section>
+                
                 <section>
                     <select>
                         <option>Contacto 1</option>
@@ -44,19 +154,31 @@ function prospectoPantalla(){
                         <option>Compromiso 5</option>
                     </select>
                 </section>
-            </div>  
-            <section className="botones">
-                <section>
-                        <BotonGuardar />
-                </section>
+                <section className="botones">
 
-                <section>
-                    <nav>
-                        <Link to="/asesor/editar-prospecto"><BotonCompletarSolicitud /></Link>
-                    </nav>
-                </section>
-            </section>    
+                    <button 
+                        type ="submit" 
+                        className="BotonGuardar" 
+                        disabled={status !== 'dirty'}  
+                        onClick={handleSave}
+                    >
+                        Guardar</button>
+                    <section>
+                        <nav>
+                            <Link to={`/asesor/editar-prestatario/${prospecto.prospectId}`}>
+                                <button 
+                                    type= "button"
+                                    className="BotonGuardar"
+                                    onClick={complete}
+                                >
+                                    Completar Solicitud</button>
+                            </Link>
+                        </nav>
+                    </section>
+            </section> 
+            </form>     
         </div>
-    )
+        )
+    }
 }
-export default prospectoPantalla;
+export default ProspectoPantalla;

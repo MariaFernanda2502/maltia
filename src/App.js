@@ -23,16 +23,26 @@ import AnalistaVerPrestatarios from './Pantallas/AnalistaVerPrestatarios/Analist
 import EditarPrestatario2 from './Pantallas/editarPrestatario2/editarPrestatario2';
 import ProspectoPantalla from './Pantallas/prospectoPantalla/prospectoPantalla';
 import EditarPrestatario from './Pantallas/editarPrestatario/editarPrestatario';
-
+import PantallaExtraProspecto from './Pantallas/prospectoPantalla/PantallaExtraProspecto';
+import PantallaNuevoProspecto from './Pantallas/prospectoPantalla/PantallaNuevoProspecto';
 function App() {
   return (
     <Router>
       <Switch>
+
+        <Route 
+          path= "/asesor/editar-prospecto/:id"
+          render={(props)=> <PantallaExtraProspecto {...props}/>} 
+          exact 
+        />
+
+        <Route 
+          path='/asesor/editar-prestatario/:id' 
+          render = {(props) => <EditarPrestatario {...props}/> }
+          exact
+        />
         <Route path= '/asesor/nuevo-prospecto' exact>
-          <ProspectoPantalla/>
-        </Route>
-        <Route path='/asesor/editar-prospecto' exact>
-          <EditarPrestatario />
+          <PantallaNuevoProspecto/>
         </Route>
         <Route path='/asesor' exact>
           <AsesorVerProspectos />

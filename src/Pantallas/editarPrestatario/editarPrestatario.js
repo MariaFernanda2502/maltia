@@ -1,49 +1,87 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BotonGuardar from '../../Componentes/BotonGuardar/BotonGuardar';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import Interruptor from '../../Componentes/InterruptorBooleano/InterruptorBooleano';
 import './editarPrestatario.css';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+function EditarPrestatario(props){
+    const [status, setStatus] = useState('pristine');
+    const [error, setError] = useState(null)
+    const [prospecto, setProspecto] = useState({});
+    const [prestatario, setPrestatario] = useState({});
+    const [solicitud, setSolicitud] = useState({});
 
-function EditarPrestatario({idPrestatario,nombre,apellidos,telefono,fecha, direccion,noZorro,credito,nomRef1,numRef1, nomRef2, numRef2}){
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/asesor/informacion-prospecto/${props.match.params.id}`)
+        .then((result)=>{
+            setProspecto(result.data.data)
+            setStatus('resolved')
+        })
+        .catch((error)=>{
+            setError(error)
+            setStatus('error')
+        })
+    },[]);
+
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/asesor/crear-prestatario/${props.match.params.id}`)
+        .then((result)=>{
+            setPrestatario(result.data.data)
+            setStatus('resolved')
+        })
+        .catch((error)=>{
+            setError(error)
+            setStatus('error')
+        })
+    },[]);
+
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/asesor/informacion-solicitud/${props.match.params.id}`)
+        .then((result)=>{
+            setSolicitud(result.data.data)
+            setStatus('resolved')
+        })
+        .catch((error)=>{
+            setError(error)
+            setStatus('error')
+        })
+    },[]);
+
+    //const [prospectId, nombre, apellidoPaterno, telefono] = prospecto;
+    //const [direccion, numClienteZorro, fechaNacimiento, firmaBuro, ine ] = prestatario;
     return(
         <div id="contenido">
             <header>
                 <nav>
                     <Link to = "/asesor"><FlechaRegresar /></Link>
                 </nav>
-                <h1>Prospecto #{idPrestatario}</h1>
+                <h1>Prestatario #{prospecto.prospectId}</h1>
             </header>
-            <div className="cajaEntradas">
+            <form className="cajaEntradas">
                 <section>
-                    <p> 
-                        Nombre(s)* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text"  value={nombre} >
-                        </input>
-                    </p>
+                    <label>Nombre(s)*</label>
+                    <input type="text"  value={prospecto.nombre} ></input>
                 </section> 
                 <section>
-                    <p> 
-                        Apellidos* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text"  value={apellidos}>
-                        </input>
-                    </p>
-                </section>
-                <section className="Fecha">
-                    <p>
-                        <label> Fecha de Nacimiento</label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="date" id="fecha">
-                        </input>
-                    </p>
+                    <label>Apellido Paterno*</label>
+                    <input type="text"  value={prospecto.apellidoPaterno}></input>
                 </section>
                 <section>
-                    <p> 
-                        Telefono &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" className="tel"  placeholder={telefono} >
-                        </input>
-                    </p>
+                    <label>Apellido Materno*</label>
+                    <input type="text"  value={prospecto.apellidoMaterno}></input>
                 </section>
+
+                <section className="Fecha">
+                    <label> Fecha de Nacimiento*</label>
+                    <input type="date" id="fecha"></input>
+                </section>
+
+                <section>
+                    <label>Telefono*</label>
+                    <input type="text" className="tel"  placeholder={prospecto.telefono} ></input>
+                </section>
+
                 <section>
                     <select>
                         <option>Contacto 1</option>
@@ -60,71 +98,67 @@ function EditarPrestatario({idPrestatario,nombre,apellidos,telefono,fecha, direc
                         <option>Compromiso 5</option>
                     </select>
                 </section>
+
                 <section>
-                    <p> 
-                        Dirección &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" className="dir" placeholder={direccion} >
-                        </input>
-                    </p>
+                    <label>Direcion*</label>
+                    <input type="text" className="dir" placeholder={prestatario.direccion} >
+
+                    </input>
                 </section>
+
                 <section>
-                    <p> 
-                        Número de cliente zorro &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="number" className="zor" placeholder={noZorro} >
-                        </input>
-                    </p>
+                    <label>Numero de cliente Zorro*</label>
+                    <input type="number" className="zor" placeholder={prestatario.numClienteZorro} ></input>
                 </section>
+                
                 <section>
-                   <p>
-                        <label > Firma de buró de credito</label>
+                        <label>Firma de buró de credito</label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Interruptor />
-
-                    </p>
                 </section>
+
                 <section>
-                   <p>
                         <label >INE</label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <Interruptor />
-                    </p>
+                        <Interruptor /> 
                 </section>
+
                 <section>
-                    <p>Credito solicitado &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text"  placeholder={credito} >
-                        </input>
-                    </p>
+                    <label>Credito solicitado</label>
+                    <input type="text" placeholder={solicitud.creditoSolicitado} >     
+                    </input>
                 </section>
+                
                 <section>
                     <p>
                         Nombre referencia 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" className="referencia" placeholder={nomRef1} >
+                        <input type="text" className="referencia"  >
                         </input>
                     </p>
                 </section>
                 <section>
                     <p>
                         Telefono referencia 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        <input type="text" className="referencia" placeholder={numRef1} >
+                        <input type="text" className="referencia"  >
                         </input>
                     </p>
                 </section>
                 <section>
                     <p>
                         Nombre referencia 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" className="referencia" placeholder={nomRef2} >
+                        <input type="text" className="referencia"  >
                         </input>
                     </p>
                 </section>
                 <section>
                     <p>
                         Telefono referencia 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        <input type="text" className="referencia" placeholder={numRef2} >
+                        <input type="text" className="referencia" >
                         </input>
                     </p>
                 </section>
 
-            </div>  
+            </form>  
             <section className="botones">
                 <section>
                         <BotonGuardar />
