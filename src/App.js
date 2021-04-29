@@ -31,7 +31,6 @@ function App() {
   const { employee, login } = useAuth();
 
   return (
-<<<<<<< HEAD
     <React.Fragment>
     { employee ? (
         <Router>
@@ -92,72 +91,6 @@ function App() {
         <Login />
       ) }
     </React.Fragment>
-=======
-    <Router>
-      <Switch>
-        <Route path= '/asesor/nuevo-prospecto' exact>
-          <ProspectoPantalla/>
-        </Route>
-        <Route path='/asesor/editar-prospecto' exact>
-          <EditarPrestatario />
-        </Route>
-        <Route path='/asesor' exact>
-          <AsesorVerProspectos />
-        </Route>
-        <Route path='/analista' exact>
-          <AnalistaPrincipal />
-        </Route>
-        <Route path='/analista/ver-prestatarios' exact>
-          <AnalistaVerPrestatarios />
-        </Route>
-        <Route 
-            path='/analista/ver-prestatarios/:prospectId'
-            render={(props) => <EditarPrestatario2 {...props}/>}
-            exact 
-          />
-        <Route path='/analista/reportes' exact>
-          <AnalistaReportes />
-        </Route>
-
-        <Route path='/admin/asesores/nuevo' exact>
-          <NuevoAsesor />
-        </Route>
-        <Route path='/admin/analistas/nuevo' exact>
-          <NuevoAnalista />
-        </Route>
-        <Route 
-          path='/admin/asesores/:userId'
-          render={(props) => <PeticionUnAsesor {...props}/>} 
-          exact
-        />
-        <Route 
-          path='/admin/analistas/:userId'
-          render={(props) => <PeticionUnAnalista {...props}/>} 
-          exact
-        />
-        <Route path = '/admin/asesores' exact>
-          <AdminVerAsesores />
-        </Route>
-        <Route path = '/admin/analistas' exact>
-          <AdminVerAnalistas />
-        </Route>
-        <Route path='/admin' exact>
-          <AdminPrincipal />
-        </Route>
-        
-        <Route path='/noImplementado' exact>
-          No hemos hecho nada aqui :c
-        </Route>
-        <Route path='/' exact>
-          <LoginPantalla/>
-        </Route>
-        <Route path='/'>
-          No encontramos tu pagina D:
-        </Route>
-        
-      </Switch>
-    </Router>
->>>>>>> 64ee3a9b1266553a752693a77924517933c06f4f
   );
 }
 
