@@ -8,7 +8,7 @@ function Buscador() {
         <div className='Buscador_div'>
             <input type='search' placeholder='Buscar:'/>
             <div className='Buscador_imagen'>
-                <button> <img src={iconoBuscar} id='iconoBuscar'/> </button>
+                <button type="submit"> <img src={iconoBuscar} id='iconoBuscar'/> </button>
             </div>
             <div className='Buscador_imagen2'>
                 <button> <img src={iconoFiltrar} id='iconoFiltrar' /> </button>
