@@ -4,88 +4,53 @@ import BotonEditar from '../../Componentes/BotonEditar/BotonEditar';
 import BotonEstatus from '../../Componentes/BotonEstatus/BotonEstatus';
 import Buscador from '../../Componentes/Buscador/Buscador';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-export default function AnalistaVerPrestatarios(props) {
-   const [status,setStatus] = useState('idle');
-    const [users,setUsers] = useState([]);
-    useEffect(() =>{
-        setStatus('loading')
+import { Link } from 'react-router-dom';
+
+export default function AsesorVerPrestatarios(props) {
+    const [prospectos, setProspectos] = useState([]);
+    useEffect(()=>{
+        //get all users
         axios.get('http://localhost:5000/analista/lista-prestatarios')
-        .then((result) =>{
-            setStatus('resolved');
-            setUsers(result.data.data)
+        .then((result)=>{
+            setProspectos(result.data.data)
+            console.log(result.data.data)
         })
-        .catch((error) =>{})
+        .catch((error)=>{})
     },[])
 
-    if (status === 'idle' || status === 'loading') {
-        return <h1>Cargando....</h1>
-    }
-    if (status === 'error') {
-        <h1>Hubo un error</h1>
-    }
-    if (status === 'resolved') {
-    return (
-        <div className="GeneralVerPrestatarios">
-            <header className="BuscadorAnalistas">
-            <Link to='/analista'><FlechaRegresar /></Link>    
-            <Buscador />
-            </header>
+    
 
-            <body className="ContenidoTablaParaAnalistas">
-                <div className="TituloPrestatarios">
-                    <h3 className="NombreprestaAna">Nombre del prestatario</h3>
+    return (
+        <div className="AesorVerProspectos">
+            <header className="AsesorHeader">
+                <Buscador />
+            </header>
+            <body className="ContenidoParaAsesorVerProspectos">
+                <div className="CuadroNombreProspectos">
+                    <h3 className="nombrePrestatarioAnalista">Nombre del prestatario</h3>
                 </div>
-                <div className="DatosPrestatarioAnalista">
+                <div className="DatosAsesorProspecto">
                     <table>
-                    {users.length > 0 && users.map((user) =>{
-                        return(
-                           <tr className="ElementosTablaPrestatarioAnalista">
-                           <div className="ElementosDeTablaAnalistaprest">
-                              <td className="nombrePrestatarioAnalista" key = {user.prospectId}>{user.nombre}</td>
-                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
-                              <td className="EstatusPesonaAnalista"><BotonEstatus estatus="aprobado"/></td>
-                           </div>
-                        </tr>  
-                        )
-                    })}
-                        <tr className="ElementosTablaPrestatarioAnalista">
-                       
-            
-        )
-                        </tr>
-                        <tr className="ElementosTablaPrestatarioAnalista">
-                           <div className="ElementosDeTablaAnalistaprest">
-                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
-                              <td className="EstatusPesonaAnalista"><BotonEstatus estatus="aprobado"/></td>
-                           </div>
-                        </tr>
-                        <tr className="ElementosTablaPrestatarioAnalista">
-                           <div className="ElementosDeTablaAnalistaprest">
-                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
-                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                           </div>
-                        </tr>
-                        <tr className="ElementosTablaPrestatarioAnalista">
-                           <div className="ElementosDeTablaAnalistaprest">
-                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
-                              <td className="EstatusPesonaAnalista"><BotonEstatus estatus="rechazado"/></td>
-                           </div>
-                        </tr>
-                        <tr className="ElementosTablaPrestatarioAnalista">
-                           <div className="ElementosDeTablaAnalistaprest">
-                              <td className="nombrePrestatarioAnalista">Efren Aldana Escalona</td>
-                              <Link to='/analista/ver-prestatarios/editar'><td className="EditarDatosAnalista"><BotonEditar /></td></Link>
-                              <td className="EstatusPesonaAnalista"><BotonEstatus/></td>
-                           </div>
-                        </tr>
+                        {prospectos.length > 0 && prospectos.map((prospecto)=>{
+                            return(
+                                <tr className="ElementosAsesorProspecto">
+                                    <div className="InforamcionDeTablaAsesorProspecto">
+                                        <td className="nombreDeProspecto" key={prospecto.prospectId}>{prospecto.nombre} {prospecto.apellidoPaterno}  {prospecto.apellidoMaterno}</td>
+                                        <td className="BotonEditarParaAsesor">
+                                            <nav>
+                                            <Link to = {`ver-prestatarios/${prospecto.prospectId}`} ><BotonEditar /></Link>
+                                            </nav>
+                                        </td>
+                                        <td className="BotonEstatusparaAsesor"><BotonEstatus /></td>
+                                    </div>
+                                </tr>
+                            )
+                        })}
                     </table>
                 </div>
             </body>
+            
         </div>
     );
-}}
+}
