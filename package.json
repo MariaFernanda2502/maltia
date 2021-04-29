@@ -12,12 +12,9 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-<<<<<<< HEAD
-    "react-select": "^4.3.0",
-=======
     "react-select": "^4.2.1",
     "sweetalert": "^2.1.2",
->>>>>>> 4a7ff5e3749b9f4f048ca9586d2a6f98632e538c
+    "sweetalert2": "^10.16.6",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
