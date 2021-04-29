@@ -6,6 +6,7 @@ import './editarPrestatario.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import swal from 'sweetalert';
+import Select from 'react-select'
 
 function EditarPrestatario(props){
 
@@ -227,6 +228,21 @@ function EditarPrestatario(props){
                 })
     }
 
+    const contacto = [
+        { value: 'Contacto 1', label: 'Contacto 1' },
+        { value: 'Contacto 2', label: 'Contacto 2' },
+        { value: 'Contacto 3', label: 'Contacto 3' },
+      ]
+
+      const compromis = [
+        { value: 'Compromiso 1', label: 'Compromiso 1' },
+        { value: 'Compromiso 2', label: 'Compromiso 2' },
+        { value: 'Compromiso 3', label: 'Compromiso 3' },
+        { value: 'Compromiso 4', label: 'Compromiso 4' },
+        { value: 'Compromiso 5', label: 'Compromiso 5' }
+      ]
+      
+
 
     return(
         <div id="contenido">
@@ -265,20 +281,12 @@ function EditarPrestatario(props){
                 </section>
 
                 <section className="selectopciones">
-                    <select className="opciones">
-                        <option>Contacto 1</option>
-                        <option>Contacto 2</option>
-                        <option>Contacto 3</option>
-                    </select>
+                    <Select className="selectCuadro" options= {contacto}>
+                    </Select>
                 </section>  
-                <section className="selectopciones" >
-                    <select className="opciones">
-                        <option>Compromiso 1</option>
-                        <option>Compromiso 2</option>
-                        <option>Compromiso 3</option>
-                        <option>Compromiso 4</option>
-                        <option>Compromiso 5</option>
-                    </select>
+                <section className="selectopciones">
+                    <Select className="selectCuadro" options = {compromis}>
+                    </Select>
                 </section>
 
                 <section className='AdminEditarAnalista_div'>

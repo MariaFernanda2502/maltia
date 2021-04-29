@@ -109,12 +109,18 @@ function ProspectoPantalla(props){
         }
     }
 
-    const options = [
-        { value: 'CAZADOR COMERCIAL', label: 'CAZADOR COMERCIAL' },
-        { value: 'FLECHA ABARROTERA', label: 'FLECHA ABARROTERA' },
-        { value: 'PROFETA NAUCALPAN', label: 'PROFETA NAUCALPAN' },
-        { value: 'CAZADOR SANTA URSULA', label: 'CAZADOR SANTA URSULA' },
-        { value: 'ZORRO ALTA TENSION 2', label: 'ZORRO ALTA TENSION 2' }
+    const contacto = [
+        { value: 'Contacto 1', label: 'Contacto 1' },
+        { value: 'Contacto 2', label: 'Contacto 2' },
+        { value: 'Contacto 3', label: 'Contacto 3' },
+      ]
+
+      const compromis = [
+        { value: 'Compromiso 1', label: 'Compromiso 1' },
+        { value: 'Compromiso 2', label: 'Compromiso 2' },
+        { value: 'Compromiso 3', label: 'Compromiso 3' },
+        { value: 'Compromiso 4', label: 'Compromiso 4' },
+        { value: 'Compromiso 5', label: 'Compromiso 5' }
       ]
       
     
@@ -167,11 +173,11 @@ function ProspectoPantalla(props){
                 </section>
                 
                 <section className="selectopciones">
-                    <Select className="selectCuadro" options= {options}>
+                    <Select className="selectCuadro" options= {contacto}>
                     </Select>
                 </section>  
                 <section className="selectopciones">
-                    <Select className="selectCuadro" options = {options}>
+                    <Select className="selectCuadro" options = {compromis}>
                     </Select>
                 </section>
                 <section className="botones">

@@ -9,12 +9,6 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 function AdminAnalistaForm(props) {
-    let guardadoExito = null;
-    let mostrarGuardado = false;
-    
-    if (mostrarGuardado) {
-        guardadoExito = <VentanaGuardado/>;
-    } 
 
     const [analista, setAnalista] = useState(props.analista);
     const [status, setStatus] = useState('pristine');
@@ -26,6 +20,7 @@ function AdminAnalistaForm(props) {
 
     const {
         userId,
+        contrasena,
         nombre, 
         apellidoPaterno,
         apellidoMaterno,
@@ -49,7 +44,7 @@ function AdminAnalistaForm(props) {
         setError(null)
 
         const action = analista.userId ? 'patch' : 'post'; 
-        const url = analista.userId ? `http://localhost:5000/admin/analistas/editar/${analista.userId}` : 'http://localhost:5000/admin/analistas/crear';
+        const url = analista.userId ? `http://localhost:5000/admin/analistas/editar/${analista.userId}` : 'http://localhost:5000/admin/singup';
 
         axios({
             method: action,
@@ -63,7 +58,7 @@ function AdminAnalistaForm(props) {
                 props.onSave(result.data.data)
                 setStatus('pristine')
                 swal({
-                    title: "Guardado con exito",
+                    title: "Guardado con éxito",
                     icon: "success",
                     width:'50%',
                     backdrop: true,
@@ -157,6 +152,17 @@ function AdminAnalistaForm(props) {
                                 required
                             />
                         </div>
+                        <div className='AdminEditarAnalista_div'>
+                            <label htmlFor='contrasena' className='AdminEditarAnalista_label'>Contraseña *</label>
+                            <input 
+                                name='contrasena' 
+                                className='AdminEditarAnalista_input' 
+                                type='text' 
+                                value={contrasena} 
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
                     </form>
                     <div >
                         
@@ -181,7 +187,6 @@ function AdminAnalistaForm(props) {
                             </div>
                         ) : null
                     } 
-                    {guardadoExito}
                 </body>
             </div>
         )
