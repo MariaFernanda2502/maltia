@@ -9,6 +9,7 @@ function EditarPrestatario2(props){
     const [prospecto, setProspecto] = useState({});
     const [status,setStatus] =useState('pristine');
     const [error, setError] = useState(null);
+    const fecha = new Date(1995,11,17);
     useEffect(()=>{
         //get all users
         axios.get(`http://localhost:5000/analista/ver-prestatarios/${props.match.params.prospectId}`)
@@ -64,6 +65,9 @@ function EditarPrestatario2(props){
         setProspecto(actualizar)
         setStatus('dirty')
     }
+    function Pruebas(event) {
+        console.dir(event.target.value)
+    }
 
     if(status==='error'){
         <h1>Error</h1>
@@ -83,8 +87,8 @@ function EditarPrestatario2(props){
         <form className="cajaEntradas">
             <section>
                 <p> 
-                    <label htmlFor="Antiguedad">Antiguedad</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="date" value={prospecto.antiguedad} onChange={handleChange} name="Antiguedad">
+                    <label htmlFor="antiguedad">Antiguedad</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="date"   value={prospecto.antiguedad} onChange={handleChange} name="antiguedad">
                     </input>
                 </p>
             </section> 
@@ -104,12 +108,7 @@ function EditarPrestatario2(props){
 
                 </p>
             </section>
-            <section>
-               <p>
-                    <label htmlFor="Buro">Consulta en buró de credito</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </p>
-            </section>
+            
             <section>
                 <h5>Estatus de Credito</h5>
                 <select>
@@ -129,13 +128,12 @@ function EditarPrestatario2(props){
 
         </form>  
         <section className="botones">
-        <button 
-                    type ="submit" 
-                    className="BotonGuardar" 
-                    disabled={status !== 'dirty'}  
-                    onClick={handleSave}
-        >
-                    Guardar</button>
+            <BotonGuardar 
+                type ="submit" 
+                className="BotonGuardar" 
+                disabled={status !== 'dirty'}  
+                onClick={handleSave}
+            />
 
         </section>    
     </form>

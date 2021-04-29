@@ -187,6 +187,5 @@ function AdminAnalistaForm(props) {
         )
     }
 }
-
 export default AdminAnalistaForm;
 
