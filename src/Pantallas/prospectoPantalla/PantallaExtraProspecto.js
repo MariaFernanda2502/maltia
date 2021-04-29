@@ -40,7 +40,7 @@ function PantallaExtraProspecto(props){
                         <Link to="/asesor"><FlechaRegresar /></Link>
                     </nav>
                 </div>
-                <h1>Prospecto {prospecto.prospectId}</h1>
+                <h1 className='encabezadoh1'>Prospecto {prospecto.prospectId}</h1>
                 <ProspectoPantalla prospecto={prospecto} onSave={setProspecto}/>
             </div>
         )

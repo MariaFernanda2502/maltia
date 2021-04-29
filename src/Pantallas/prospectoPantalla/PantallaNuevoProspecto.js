@@ -19,7 +19,7 @@ function PantallaExtraProspecto(props){
                     <Link to="/asesor"><FlechaRegresar /></Link>
                 </nav>
             </div>
-            <h1>Nuevo Prospecto</h1>
+            <h1 className='encabezadoh1'>Nuevo Prospecto</h1>
             <ProspectoPantalla prospecto={prospecto} />
         </div>
     )

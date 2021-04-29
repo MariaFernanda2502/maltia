@@ -4,7 +4,8 @@ import BotonCompletarSolicitud from '../../Componentes/BotonCompletarSolicitud/B
 import './prospectoPantalla.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-
+import swal from 'sweetalert';
+import Select from 'react-select';
 function ProspectoPantalla(props){
     
     const [status,setStatus] =useState('pristine');
@@ -43,6 +44,16 @@ function ProspectoPantalla(props){
                 console.log(result.data.data.nombre)
                 //props.onSave(result.data.data)
                 setStatus('pristine')
+                swal({
+                    title: "Guardado con éxito",
+                    icon: "success",
+                    width:'50%',
+                    backdrop: true,
+                    customClass: {
+                        popup: 'contenedorAlert',
+                    },
+                    confirmButtonColor: '#FBFCFC'
+                  });
             })
             .catch(error=>{
                 setError(error)
@@ -97,6 +108,16 @@ function ProspectoPantalla(props){
             })
         }
     }
+
+    const options = [
+        { value: 'CAZADOR COMERCIAL', label: 'CAZADOR COMERCIAL' },
+        { value: 'FLECHA ABARROTERA', label: 'FLECHA ABARROTERA' },
+        { value: 'PROFETA NAUCALPAN', label: 'PROFETA NAUCALPAN' },
+        { value: 'CAZADOR SANTA URSULA', label: 'CAZADOR SANTA URSULA' },
+        { value: 'ZORRO ALTA TENSION 2', label: 'ZORRO ALTA TENSION 2' }
+      ]
+      
+    
     if(status==='error'){
         <h1>Error</h1>
     }
@@ -107,39 +128,51 @@ function ProspectoPantalla(props){
     if(status=== 'pristine' || status === 'dirty'){
     return(
         <div id="contenido">
-            <form className="cajaEntradasIn" onSubmit={handleSave}>
-                <section>
-                    <lable htmlFor="nombre" className="labels">Nombre</lable>
-                    <input type="text" name="nombre" value={nombre} onChange={handleChange}></input>
+            <form className="AdminEditarAnalista_form" onSubmit={handleSave}>
+                <section className='AdminEditarAnalista_div'>
+                    <lable 
+                        htmlFor="nombre" 
+                        className='AdminEditarAnalista_label'>
+                    Nombre</lable>
+                    <input 
+                        type="text" 
+                        name="nombre" 
+                        className='AdminEditarAnalista_input' 
+                        value={nombre} 
+                        onChange={handleChange}>
+                    </input>
                 </section>
-                <section>
-                    <lable htmlFor="apellidoPaterno" className="labels">Apellido Paterno</lable>
-                    <input type="text" name="apellidoPaterno" value={apellidoPaterno} onChange={handleChange}></input>
+                <section className='AdminEditarAnalista_div'>
+
+                    <lable 
+                        htmlFor="apellidoPaterno" 
+                        className='AdminEditarAnalista_label'>
+                    Apellido Paterno</lable>
+                    <input 
+                        type="text" 
+                        name="apellidoPaterno" 
+                        className='AdminEditarAnalista_input' 
+                        value={apellidoPaterno} 
+                        onChange={handleChange}>
+                    </input>
                 </section>
-                <section>
-                    <lable htmlFor="apellidoMaterno" className="labels">Apellido Materno</lable>
-                    <input type="text" name="apellidoMaterno" value={apellidoMaterno} onChange={handleChange}></input>
+
+                <section className='AdminEditarAnalista_div'>
+                    <lable htmlFor="apellidoMaterno" className='AdminEditarAnalista_label'>Apellido Materno</lable>
+                    <input type="text" name="apellidoMaterno" className='AdminEditarAnalista_input' value={apellidoMaterno} onChange={handleChange}></input>
                 </section>
-                <section>
-                    <label htmlFor = "telefono" className="labels">Teléfono</label>
-                    <input type="text" name="telefono" value={telefono} onChange={handleChange}></input>
+                <section className='AdminEditarAnalista_div'>
+                    <label htmlFor = "telefono" className='AdminEditarAnalista_label'>Teléfono</label>
+                    <input type="text" name="telefono" className='AdminEditarAnalista_input' value={telefono} onChange={handleChange}></input>
                 </section>
                 
-                <section>
-                    <select>
-                        <option>Contacto 1</option>
-                        <option>Contacto 2</option>
-                        <option>Contacto 3</option>
-                    </select>
+                <section className="selectopciones">
+                    <Select className="selectCuadro" options= {options}>
+                    </Select>
                 </section>  
-                <section>
-                    <select>
-                        <option>Compromiso 1</option>
-                        <option>Compromiso 2</option>
-                        <option>Compromiso 3</option>
-                        <option>Compromiso 4</option>
-                        <option>Compromiso 5</option>
-                    </select>
+                <section className="selectopciones">
+                    <Select className="selectCuadro" options = {options}>
+                    </Select>
                 </section>
                 <section className="botones">
 
