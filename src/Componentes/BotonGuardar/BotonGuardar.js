@@ -7,7 +7,7 @@ function BotonGuardar(props) {
 
         <button 
           type={props.type} 
-          className={props.className} 
+          className="BotonGuardar" 
           disabled={props.disabled} 
           onClick = {props.onClick}
           >

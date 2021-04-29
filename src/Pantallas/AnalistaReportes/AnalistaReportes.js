@@ -1,22 +1,32 @@
-import REACT from 'react';
-import CardPantallaPrincipal from '../../Componentes/CardPantallaPrincipal/CardPantallaPrincipal';
-import BotonCerrarSesion from '../../Componentes/BotonCerrarSesion/BotonCerraSesion';
+import React, { useEffect, useState } from 'react';
 import './CardsSelectoras.css';
 import FlechaRegresar from '../../Componentes/FlechaRegresar/FlechaRegresar';
 import { Link } from 'react-router-dom';
-
-import reporteAprobacion from './imgs/reporteAprobacion.png';
-import reporteRechazo from './imgs/reporteRechazo.png';
-
+import axios from 'axios';
+import Chart from '../../Componentes/Chart';
 function AnalistaReportes() {
+    const [reporte, setReporte] = useState([]);
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/analista//generar-reporte`)
+        .then((result)=>{
+            setReporte(result.data.data)
+        })
+        .catch((error)=>{
+        })
+    },[]);
 
+    const dataForChart = reporte.map((element)=>{
+        return {type: 'bar', data: [element.total], color: 'blue', name: element.estatus}
+    })
     return (
         <div className='PantallaCardsSelectoras_body'>
             <Link to='/analista' className='FlechaRegresar'><FlechaRegresar /></Link>
-            <div className='PantallaCardsSelectoras_cards'>
-            <Link to='/noImplementado' className='PantallaCardsSelectoras_link'><CardPantallaPrincipal imagenes={reporteAprobacion} mensaje='Aprobacion'/></Link>
-            <Link to='/noImplementado' className='PantallaCardsSelectoras_link'><CardPantallaPrincipal imagenes={reporteRechazo} mensaje='Rechazo'/></Link>
-            </div>
+            <Chart 
+            title="Reporte estatus"
+            categories= {['']}
+            isLegendVisible = {true}
+            series={dataForChart}
+            />
         </div>
     );
 }

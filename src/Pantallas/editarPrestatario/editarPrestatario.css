@@ -8,6 +8,8 @@
 }
 header h1{
     font-family: K2D;
+    display: flex;
+    justify-content: center;
 }
 .cajaEntradas p{
     display: inline-block;
@@ -32,6 +34,18 @@ header h1{
     font-size: 16px;
 }
 
+.EntradaFecha{
+    width: 45%;
+    height: 30px;
+    display: inline-block;
+    border-style: none;
+    color:black;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
 .cajaEntradas input::placeholder{
     color: black;
     font-family: K2D;
@@ -40,7 +54,21 @@ header h1{
     font-size: 100%;
 }
 
-
+.AsesorInterruptores {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 65px;
+    width: 200px;
+    height: 30px;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 21px;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+}
 
 .cajaEntradas select{
     width: 60%;
@@ -72,4 +100,31 @@ header h1{
     display: inline-block;
     background-color: maroon;
     color: pink;
+}
+
+.opciones{
+    width: 60%;
+    border-style: none;
+    border-bottom: 1.5px solid black;
+    bottom: 50%;
+    color: black;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.selectopciones{
+    height: 60px;
+}
+
+.encabezadoh1{
+    display: flex;
+    justify-content: center;
+    font-family: K2D;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0 0 30px 0;
 }

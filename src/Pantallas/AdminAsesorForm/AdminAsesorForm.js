@@ -27,14 +27,6 @@ function AdminAsesorForm(props) {
         })
     }, [])
 
-    const options = [
-        { value: 'CAZADOR COMERCIAL', label: 'CAZADOR COMERCIAL' },
-        { value: 'FLECHA ABARROTERA', label: 'FLECHA ABARROTERA' },
-        { value: 'PROFETA NAUCALPAN', label: 'PROFETA NAUCALPAN' },
-        { value: 'CAZADOR SANTA URSULA', label: 'CAZADOR SANTA URSULA' },
-        { value: 'ZORRO ALTA TENSION 2', label: 'ZORRO ALTA TENSION 2' }
-      ]
-
     const {
         userId,
         nombre, 
@@ -74,7 +66,7 @@ function AdminAsesorForm(props) {
                 props.onSave(result.data.data)
                 setStatus('pristine')
                 swal({
-                    title: "Guardado con exito",
+                    title: "Guardado con éxito",
                     icon: "success",
                     width:'50%',
                     backdrop: true,
@@ -104,6 +96,12 @@ function AdminAsesorForm(props) {
     }
 
     if(status === 'pristine' || status === 'dirty') {
+        const tiendasSelect = tiendas.map((tienda) => {
+            return {
+                label: tienda.nombre,
+                value: tienda.storeId,
+            }
+        })
         return (
             <div>
                 <header>
@@ -173,18 +171,11 @@ function AdminAsesorForm(props) {
                     </form>
                     <div>
                         <label className='AdminEditarAsesor_la'>Tiendas</label>
-                        <Select isMulti placeholder = 'Tiendas' className='AdminEditarAsesor_select' options={options}>
-                            {/*}
-                            {tiendas.map((tienda) => { 
-                                <option>
-                                    tienda='Zorro1'
-                                    tienda='Zorro2'
-                                    tienda='Zorro2'
-                                    tienda='Zorro2'
-                                    tienda='Zorro2'
-                                </option>
-                            }})} */}
-                        </Select>
+                        <Select 
+                            isMulti placeholder = 'Tiendas' 
+                            className='AdminEditarAsesor_select' 
+                            options={tiendasSelect}
+                        />
                     </div>
                     { (status === 'dirty') 
                         ? (
