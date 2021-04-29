@@ -7,11 +7,8 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
     "axios": "^0.21.1",
-<<<<<<< HEAD
-=======
     "highcharts": "^9.0.1",
     "highcharts-react-official": "^3.0.0",
->>>>>>> 24bb6cf26ce266bdf09814e97f9588f846ccddcd
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
