@@ -24,6 +24,7 @@ export default function AsesorVerPrestatarios(props) {
     return (
         <div className="AesorVerProspectos">
             <header className="AsesorHeader">
+                <Link to='/analista'><FlechaRegresar /></Link>
                 <Buscador />
             </header>
             <body className="ContenidoParaAsesorVerProspectos">
