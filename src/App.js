@@ -57,9 +57,11 @@ function App() {
         <Route path='/analista/ver-prestatarios' exact>
           <AnalistaVerPrestatarios />
         </Route>
-        <Route path='/analista/ver-prestatarios/editar' exact>
-          <EditarPrestatario2 />
-        </Route>
+        <Route 
+            path='/analista/ver-prestatarios/:prospectId'
+            render={(props) => <EditarPrestatario2 {...props}/>}
+            exact 
+          />
         <Route path='/analista/reportes' exact>
           <AnalistaReportes />
         </Route>
@@ -99,6 +101,7 @@ function App() {
         <Route path='/'>
           No encontramos tu pagina D:
         </Route>
+        
       </Switch>
     </Router>
   );
