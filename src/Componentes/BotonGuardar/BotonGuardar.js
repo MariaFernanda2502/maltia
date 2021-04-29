@@ -1,10 +1,20 @@
 import React from 'react';
 import './BotonGuardar.css';
 
-function BotonGuardar() {
+function BotonGuardar(props) {
   return (
     <div className="BotonGuardar">
-        <button type="submit" className="BotonGuardar">Guardar</button>
+
+        <button 
+          type={props.type} 
+          className={props.className} 
+          disabled={props.disabled} 
+          onClick = {props.onClick}
+          >
+            Guardar
+            </button>
+
+        
     </div>
   );
 }
