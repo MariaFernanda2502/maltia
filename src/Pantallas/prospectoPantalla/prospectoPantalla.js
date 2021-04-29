@@ -4,7 +4,6 @@ import BotonCompletarSolicitud from '../../Componentes/BotonCompletarSolicitud/B
 import './prospectoPantalla.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import '../AdminEditarAnalista/AdminEditarAnalista.css';
 
 function ProspectoPantalla(props){
     
@@ -51,6 +50,30 @@ function ProspectoPantalla(props){
             })
     }
 
+    function renderContent() {
+        if(prospecto.prospectId) {
+            return (
+            <nav>
+                <Link to={`/asesor/editar-prestatario/${prospecto.prospectId}`}>
+                    <button 
+                        type= "button"
+                        className="BotonGuardar"
+                        onClick={complete}
+                    >
+                        Completar Solicitud</button>
+                </Link>
+            </nav>
+            )
+        }
+        else {
+            return  (
+                null
+            )
+        }
+    }
+
+    
+
     function complete(event){
         //event.preventDefault();
         setStatus('loading')
@@ -73,42 +96,6 @@ function ProspectoPantalla(props){
                 setStatus('error')
             })
         }
-
-       /* else{
-            const accion= 'post';
-            const url1 = `http://localhost:5000/asesor/crear-prospecto`
-            axios({
-                method: accion,
-                url: url1,
-                data: prospecto,
-                headers:{
-                    'Content-type': 'application/json; charset=UTF-8'
-                }
-            })
-            .then((result)=>{
-                setStatus('pristine')
-            })
-            .catch(error =>{
-                setError(error)
-                setStatus('error')
-            })
-            const url2= `http://localhost:5000/asesor/crear-prestatario/${prospecto.prospectId}`;
-            axios({
-                method: accion,
-                url: url2,
-                data: prospecto,
-                headers:{
-                    'Content-type': 'application/json; charset=UTF-8'
-                }
-            })
-            .then((result)=>{
-                setStatus('pristine')
-            })
-            .catch(error =>{
-                setError(error)
-                setStatus('error')
-            })
-        }*/
     }
     if(status==='error'){
         <h1>Error</h1>
@@ -164,16 +151,7 @@ function ProspectoPantalla(props){
                     >
                         Guardar</button>
                     <section>
-                        <nav>
-                            <Link to={`/asesor/editar-prestatario/${prospecto.prospectId}`}>
-                                <button 
-                                    type= "button"
-                                    className="BotonGuardar"
-                                    onClick={complete}
-                                >
-                                    Completar Solicitud</button>
-                            </Link>
-                        </nav>
+                        {renderContent()}
                     </section>
             </section> 
             </form>     

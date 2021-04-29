@@ -12,9 +12,21 @@ function AdminPrincipal() {
         <div className='PantallaCardsSelectoras_body'>
             <div className='PantallaCardsSelectoras_cards'>
                 <nav>
-                    <Link to='/admin/ver-analistas' className="Adminprincipal_link"><CardPantallaPrincipal imagenes={analistas} mensaje='Analistas'/></Link>
-                    <Link to='/admin/ver-asesores' className="Adminprincipal_link"><CardPantallaPrincipal imagenes={asesores} mensaje='Asesores' /></Link>
-                    <Link to='/' className="Adminprincipal_link"><BotonCerrarSesion /></Link>
+                    <Link to='/admin/analistas' className="Adminprincipal_link">
+                        <CardPantallaPrincipal 
+                            imagenes={analistas} 
+                            mensaje='Analistas'
+                        />
+                    </Link>
+                    <Link to='/admin/asesores' className="Adminprincipal_link">
+                        <CardPantallaPrincipal 
+                            imagenes={asesores} 
+                            mensaje='Asesores'
+                        />
+                    </Link>
+                    <Link to='/' className="Adminprincipal_link">
+                        <BotonCerrarSesion />
+                    </Link>
                 </nav>
             </div>
         </div>

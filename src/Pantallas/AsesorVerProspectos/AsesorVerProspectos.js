@@ -15,6 +15,7 @@ export default function AsesorVerProspectos(props) {
     const [prestatariosSolicitud, setPrestatariosSolicitud] = useState([]);
     const [status, setStatus] = useState('idle');
     const [error, setError] = useState(null);
+    const [search, setSearch] = useState('');
     useEffect(()=>{
         setStatus('loading')
         setError(null)
@@ -49,6 +50,7 @@ export default function AsesorVerProspectos(props) {
         axios.get('http://localhost:5000/asesor/lista-prestatarios-solicitud')
         .then((result)=>{
             setPrestatariosSolicitud(result.data.data)
+            console.log(result.data.data)
             setStatus('resolved')
         })
         .catch((error)=>{
@@ -56,6 +58,66 @@ export default function AsesorVerProspectos(props) {
             setStatus('error')
         })
     },[]);
+
+    function handleSearch(event){
+            event.preventDefault();
+            fetchProspectos({
+                query: search
+            })
+    }
+
+    function fetchProspectos(params) {
+        setStatus('loading')
+        setError(null)
+
+        const queryParams = {
+            ...params,
+        }
+
+        let queryString = Object.keys(queryParams).map((key) => {
+            return encodeURIComponent(key) + '=' + encodeURIComponent(queryParams[key])
+        }).join('&')
+
+        axios({
+            method: 'get',
+            url: `http://localhost:5000/asesor/lista-prospectos?${queryString}`,
+        })
+            .then((result) => {
+                setProspectos(result.data.data)
+                setStatus('resolved')
+            })
+            .catch((error) => {
+                setError(error)
+                setStatus('error')
+            })
+
+            axios({
+                method: 'get',
+                url: `http://localhost:5000/asesor/lista-prestatarios?${queryString}`,
+            })
+                .then((result) => {
+                    setPrestatarios(result.data.data)
+                    setStatus('resolved')
+                })
+                .catch((error) => {
+                    setError(error)
+                    setStatus('error')
+                })
+
+                axios({
+                    method: 'get',
+                    url: `http://localhost:5000/asesor/lista-prestatarios-solicitud?${queryString}`,
+                })
+                    .then((result) => {
+                        setPrestatariosSolicitud(result.data.data)
+                        setStatus('resolved')
+                    })
+                    .catch((error) => {
+                        setError(error)
+                        setStatus('error')
+                    })
+            
+    }
 
     if(status === 'idle' || status === 'loading'){
         return <h1>Cargando...</h1>
@@ -69,7 +131,16 @@ export default function AsesorVerProspectos(props) {
         return (
             <div className="AesorVerProspectos">
                 <header className="AsesorHeader">
-                    <Buscador />
+                <form onSubmit={handleSearch} className='Buscador_div'>
+                        <input 
+                            className='Buscador_div'
+                            type="text"
+                            placeholder="Introduce tu búsqueda"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                        <button>Buscar</button>
+                    </form>
                 </header>
                 <body className="ContenidoParaAsesorVerProspectos">
                     <div className="CuadroNombreProspectos">
@@ -120,7 +191,9 @@ export default function AsesorVerProspectos(props) {
                                                     <Link to = {`/asesor/editar-prestatario/${prestatarioSol.prospectId}`}><BotonEditar /> </Link>
                                                 </nav>
                                             </td>
-                                            <td className="BotonEstatusparaAsesor"><BotonEstatus estatus = "Aprobado"/></td>
+                                            <td className="BotonEstatusparaAsesor">
+                                                { `${prestatarioSol.estatus}` === "En proceso" ? <BotonEstatus estatus = "enEspera"/> : <BotonEstatus estatus = {prestatarioSol.estatus}/>}
+                                            </td>
                                         </div>
                                     </tr>
                                 )

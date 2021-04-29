@@ -1,11 +1,11 @@
-.AdminEditarAsesor_body {
+.AdminEditarAnalista_body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
-.AdminEditarAsesor_h1 {
+ 
+.AdminEditarAnalista_h1 {
     display: flex;
     font-family: K2D;
     font-style: normal;
@@ -15,14 +15,14 @@
     margin: 0 0 30px 0;
 }
 
-.AdminEditarAsesor_form {
+.AdminEditarAnalista_form {
     display: flex;
     flex-direction: column;
 }
 
-.AdminEditarAsesor_input {
+.AdminEditarAnalista_input {
     display: flex;
-    margin-bottom: 70px;
+    margin-bottom: 65px;
     width: 200px;
     height: 30px;
     font-family: K2D;
@@ -35,12 +35,12 @@
     border-left: 0;
 }
 
-.AdminEditarAsesor_div {
+.AdminEditarAnalista_div {
     display: flex;
     flex-direction: row;
 }
 
-.AdminEditarAsesor_label {
+.AdminEditarAnalista_label {
     width: 40%;
     font-family: K2D;
     font-style: normal;
@@ -49,7 +49,7 @@
     line-height: 21px;
 }
 
-.AdminEditarAsesor_select {
+.AdminEditarAnalista_select {
     width: 280px;
     height: 30px;
     margin-bottom: 70px;
@@ -60,7 +60,7 @@
     line-height: 21px;
 }
 
-.AdminNuevoAsesor_la {
+.AdminEditarAnalista_la {
     font-family: K2D;
     font-style: normal;
     font-weight: 100;

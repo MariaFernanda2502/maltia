@@ -74,7 +74,7 @@ function EditarPrestatario(props){
 
                 <section className="Fecha">
                     <label> Fecha de Nacimiento*</label>
-                    <input type="date" id="fecha"></input>
+                    <input type="date" id="fecha" value={prestatario.fehcaNacimiento}></input>
                 </section>
 
                 <section>

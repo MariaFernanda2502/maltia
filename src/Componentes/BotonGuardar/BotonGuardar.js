@@ -4,7 +4,7 @@ import './BotonGuardar.css';
 function BotonGuardar() {
   return (
     <div className="BotonGuardar">
-        <button type="button" className="BotonGuardar">Guardar</button>
+        <button type="submit" className="BotonGuardar">Guardar</button>
     </div>
   );
 }
