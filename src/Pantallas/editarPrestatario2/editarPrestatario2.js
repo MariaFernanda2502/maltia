@@ -13,7 +13,7 @@ function EditarPrestatario2(props){
     const [prospecto, setProspecto] = useState({});
     const [status,setStatus] =useState('pristine');
     const [error, setError] = useState(null);
-    
+    const fechaHoy = Date.now();
    
 
 
@@ -88,6 +88,7 @@ function EditarPrestatario2(props){
         setProspecto(actualizar)
         setStatus('dirty')
     }
+   
 
     if(status==='error'){
         <h1>Error</h1>
@@ -134,11 +135,13 @@ function EditarPrestatario2(props){
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <Interruptor checked={prospecto.altaISI} onClick={handleBoolC} name="altaISI"/>
                     
+                    
                 </p>
+                
             </section>
 
             <section>
-                <p> 
+                <p>
                     <label htmlFor="fechaAltaISI">Fecha de alta en ISI</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="date"    onChange={handleChange} value={prospecto.fechaAltaISI} name="fechaAltaISI">
                     </input>
@@ -181,6 +184,8 @@ function EditarPrestatario2(props){
                 disabled={status !== 'dirty'}  
                 onClick={handleSave}
             />
+
+            
 
         </section>    
     </form>

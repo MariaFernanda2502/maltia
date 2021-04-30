@@ -56,7 +56,7 @@ export default function AsesorVerPrestatarios(props) {
         <div className="AesorVerProspectos">
             <header className="AdminVerAsesoresHeader">
                     <nav>
-                        <Link to="/admin"><FlechaRegresar /></Link>
+                        <Link to="/analista"><FlechaRegresar /></Link>
                     </nav>
                     <form onSubmit={handleSearch} className='Buscador_div'>
                         <input 
@@ -84,6 +84,7 @@ export default function AsesorVerPrestatarios(props) {
                                             <nav>
                                             <Link to = {`ver-prestatarios/${prospecto.prospectId}`} ><BotonEditar /></Link>
                                             </nav>
+                                            
                                         </td>
                                         <td className="BotonEstatusparaAsesor">{ `${prospecto.estatus}` === "En proceso" ? <BotonEstatus estatus = "enEspera"/> : <BotonEstatus estatus = {prospecto.estatus}/>}</td>
                                     </div>
