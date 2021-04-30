@@ -157,22 +157,21 @@ function AdminAnalistaForm(props) {
                             <input 
                                 name='contrasena' 
                                 className='AdminEditarAnalista_input' 
-                                type='text' 
+                                type='password' 
                                 value={contrasena} 
                                 onChange={handleChange}
                                 required
                             />
                         </div>
                     </form>
-                    <div >
-                        
+                    <div>
                         <label className='AdminEditarAnalista_la'>Departamento</label>
                         <Select 
                             name='Departamentos'
                             options={options}
                             className='AdminEditarAnalista_select'
                             classNamePrefix="select"
-                            placeholder = 'Departamentos'
+                            placeholder = 'OFICINA CENTRAL'
                         />
                     </div>
                     { (status === 'dirty') 

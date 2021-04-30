@@ -14,6 +14,7 @@ function AdminAsesorForm(props) {
     const [status, setStatus] = useState('pristine');
     const [error, setError] = useState(null);
     const [tiendas, setTiendas] = useState([]);
+    const [valor, setValor] = useState([]);
 
     useEffect(() => { 
         setError(null);
@@ -30,6 +31,7 @@ function AdminAsesorForm(props) {
     const {
         userId,
         nombre, 
+        contrasena,
         apellidoPaterno,
         apellidoMaterno,
         telefono, 
@@ -41,8 +43,13 @@ function AdminAsesorForm(props) {
             ...asesor,
             [event.target.name]: event.target.value,
         };
+
         setAsesor(nuevoAsesor)
         setStatus('dirty')
+    }
+
+    const handleSelect = Options => {
+        setValor(Options);
     }
 
     function handleSave(event) {
@@ -52,7 +59,10 @@ function AdminAsesorForm(props) {
         setError(null)
 
         const action = asesor.userId ? 'patch' : 'post'; 
-        const url = asesor.userId ? `http://localhost:5000/admin/asesores/editar/${asesor.userId}` : 'http://localhost:5000/admin/asesores/crear';
+        const url = asesor.userId ? `http://localhost:5000/admin/asesores/editar/${asesor.userId}` : 'http://localhost:5000/admin/singup';
+        const TiendasSeleccionadas = valor.map((tienda) => {
+            return tienda.value;
+        })
 
         axios({
             method: action,
@@ -64,17 +74,34 @@ function AdminAsesorForm(props) {
         })
             .then((result) => {
                 props.onSave(result.data.data)
-                setStatus('pristine')
-                swal({
-                    title: "Guardado con éxito",
-                    icon: "success",
-                    width:'50%',
-                    backdrop: true,
-                    customClass: {
-                        popup: 'contenedorAlert',
-                    },
-                    confirmButtonColor: '#FBFCFC'
-                  });
+                let idAsesor = {"userAdviserId" : `${userId}`}
+                for(let i=0; i<TiendasSeleccionadas.length;i++){
+                    axios.patch(`http://localhost:5000/admin/editar/tiendas/${TiendasSeleccionadas[i]}`, {
+                        data: idAsesor,
+                        headers: {
+                            'Content-type': 'application/json; charset=UTF-8',
+                        }
+                    })
+                        .then((result)=>{
+                            console.log(result)
+                            props.onSave(result.data.data)
+                            setStatus('pristine')
+                            swal({
+                                title: "Guardado con éxito",
+                                icon: "success",
+                                width:'50%',
+                                backdrop: true,
+                                customClass: {
+                                    popup: 'contenedorAlert',
+                                },
+                                confirmButtonColor: '#FBFCFC'
+                              });
+                        })
+                        .catch(error =>{
+                            setError(error)
+                            setStatus('Error')
+                        })
+                    }
             })
             .catch (error => {
                 setError(error)
@@ -102,6 +129,7 @@ function AdminAsesorForm(props) {
                 value: tienda.storeId,
             }
         })
+
         return (
             <div>
                 <header>
@@ -168,13 +196,27 @@ function AdminAsesorForm(props) {
                                 required
                             />
                         </div>
+                        <div className='AdminEditarAsesor_div'>
+                            <label htmlFor='contrasena' className='AdminEditarAsesor_label'>Contraseña *</label>
+                            <input 
+                                name='contrasena' 
+                                className='AdminEditarAsesor_input' 
+                                type='password' 
+                                value={contrasena} 
+                                onChange={handleChange} 
+                                required
+                            />
+                        </div>
                     </form>
                     <div>
                         <label className='AdminEditarAsesor_la'>Tiendas</label>
                         <Select 
-                            isMulti placeholder = 'Tiendas' 
-                            className='AdminEditarAsesor_select' 
+                            placeholder = 'Tiendas'
                             options={tiendasSelect}
+                            isMulti 
+                            className='AdminEditarAsesor_select'
+                            onChange = {handleSelect}
+                            defaultValue={[tiendasSelect[0], tiendasSelect[1]]}
                         />
                     </div>
                     { (status === 'dirty') 
