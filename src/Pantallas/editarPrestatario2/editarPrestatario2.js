@@ -11,7 +11,7 @@ function EditarPrestatario2(props){
     const [prospecto, setProspecto] = useState({});
     const [status,setStatus] =useState('pristine');
     const [error, setError] = useState(null);
-   
+    var fechaHoy = Date.now();
 
 
     useEffect(()=>{
@@ -79,6 +79,24 @@ function EditarPrestatario2(props){
        console.log(event.target.name)
    }
 
+   function handleIZI(event) {
+   
+    if (prospecto.altaISI === true && prospecto.fechaAltaISI === null) {
+        let actualizar={
+            ...prospecto,
+            [event.target.name]: event.target.checked,
+            [prospecto.fechaAltaISI]: fechaHoy,
+            
+        }
+
+        setProspecto(actualizar)
+        setStatus('dirty')
+
+    }
+    
+    
+   }
+
     if(status==='error'){
         <h1>Error</h1>
     }
@@ -98,14 +116,14 @@ function EditarPrestatario2(props){
             <section>
                 <p> 
                     <label htmlFor="antiguedad">Antiguedad en meses</label> &nbsp;&nbsp;&nbsp;
-                    <input type="number" value={prospecto.antiguedad} onChange={handleChange} name="antiguedad">
+                    <input type="number" value={prospecto.antiguedad} onChange={handleChange} name="antiguedad" required>
                     </input>
                 </p>
             </section> 
             <section>
                 <p> 
                     <label htmlFor="capacidadPago">Capacidad de pago en pesos $ </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text"  value={prospecto.capacidadPago} onChange={handleChange} name="capacidadPago">
+                    <input type="text"  value={prospecto.capacidadPago} onChange={handleChange} name="capacidadPago" required>
                     </input>
                 </p>
             </section>
@@ -113,7 +131,7 @@ function EditarPrestatario2(props){
             <section>
                 <p> 
                     <label htmlFor="creditoSolicitado">Credito solicitado en pesos $ </label>&nbsp;&nbsp;&nbsp;
-                    <input type="text"  value={prospecto.creditoSolicitado} onChange={handleChange} name="creditoSolicitado">
+                    <input type="text"  value={prospecto.creditoSolicitado}  name="creditoSolicitado" required>
                     </input>
                 </p>
             </section>
@@ -122,7 +140,7 @@ function EditarPrestatario2(props){
                <p>
                     <label htmlFor="altaISI"> Alta en ISI</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Interruptor checked={prospecto.altaISI} onClick={handleBoolC} name="altaISI"/>
+                    <Interruptor checked={prospecto.altaISI} onClick={handleIZI} name="altaISI"/>
                     
                 </p>
             </section>
@@ -130,7 +148,7 @@ function EditarPrestatario2(props){
             <section>
                 <p> 
                     <label htmlFor="fechaAltaISI">Fecha de alta en ISI</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="date"    onChange={handleChange} value={prospecto.fechaAltaISI} name="fechaAltaISI">
+                    <input type="date"    on value={prospecto.fechaAltaISI} name="fechaAltaISI">
                     </input>
                 </p>
             </section> 
@@ -155,7 +173,7 @@ function EditarPrestatario2(props){
             <section>
                 <p> 
                     <label htmlFor="fechaAutorizacion">Fecha de autorización </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="date"   value={prospecto.fechaAutorizacion} onChange={handleChange} name="fechaAutorizacion">
+                    <input type="date"   value={prospecto.fechaAutorizacion} onChange={handleChange} name="fechaAutorizacion" >
                     </input>
                 </p>
             </section> 

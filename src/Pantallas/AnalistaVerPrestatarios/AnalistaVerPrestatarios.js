@@ -43,7 +43,7 @@ export default function AsesorVerPrestatarios(props) {
                                             <Link to = {`ver-prestatarios/${prospecto.prospectId}`} ><BotonEditar /></Link>
                                             </nav>
                                         </td>
-                                        <td className="BotonEstatusparaAsesor"><BotonEstatus /></td>
+                                        <td className="BotonEstatusparaAsesor">{ `${prospecto.estatus}` === "En proceso" ? <BotonEstatus estatus = "enEspera"/> : <BotonEstatus estatus = {prospecto.estatus}/>}</td>
                                     </div>
                                 </tr>
                             )
