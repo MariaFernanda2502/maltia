@@ -6,8 +6,8 @@ https://github.com/MariaFernanda2502/maltia-api.git
 
 ## Librerías utilizadas
 
-  "axios": "^0.21.1",
-  
+    
+    "axios": "^0.21.1",
     "highcharts": "^9.0.1",
     "highcharts-react-official": "^3.0.0",
     "moment": "^2.29.1",
