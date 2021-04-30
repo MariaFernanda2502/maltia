@@ -6,12 +6,15 @@ import Interruptor from '../../Componentes/InterruptorBooleano/InterruptorBoolea
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import AsyncSelect from 'react-select/async';
+import swal from 'sweetalert';
+
 import '../../Componentes/InterruptorBooleano/InterruptorBooleano.css'
 function EditarPrestatario2(props){
     const [prospecto, setProspecto] = useState({});
     const [status,setStatus] =useState('pristine');
     const [error, setError] = useState(null);
-    var fechaHoy = Date.now();
+    
+   
 
 
     useEffect(()=>{
@@ -51,6 +54,7 @@ function EditarPrestatario2(props){
             .then((result)=>{
                 
                 //props.onSave(result.data.data)
+                swal("Guardado", `Se ha guardado con éxito la informacion del prestatario ${prospecto.nombre} ${prospecto.apellidoPaterno}  ${prospecto.apellidoMaterno} con ID #${prospecto.prospectId}`, "success");
                 setStatus('pristine')
             })
             .catch(error=>{
@@ -58,13 +62,9 @@ function EditarPrestatario2(props){
                 setStatus('error')
             })
     }
-    const options = [
-        { value: 'En proceso', label: 'En proceso'},
-        { value: 'Aceptado', label: 'Aceptado' },
-        { value: 'Rechazado', label: 'Rechazado' }
-    ]
+    
     function handleBoolC(event) {
-        console.log('*** checked:', event.target.checked);
+        console.log('* checked:', event.target.checked);
         console.dir(event)
         let actualizar={
             ...prospecto,
@@ -75,27 +75,19 @@ function EditarPrestatario2(props){
         setStatus('dirty')
     }
 
-   function handleDropC(event) {
-       console.log(event.target.name)
-   }
-
-   function handleIZI(event) {
-   
-    if (prospecto.altaISI === true && prospecto.fechaAltaISI === null) {
+    function handleDropC(event){
+        console.log('***Cambio', event.target.value);
+        console.dir(event)
+        console.log(event.target.name)
+        console.log(event.target.value)
         let actualizar={
             ...prospecto,
-            [event.target.name]: event.target.checked,
-            [prospecto.fechaAltaISI]: fechaHoy,
-            
-        }
+            [event.target.name]: event.target.value,
 
+        }
         setProspecto(actualizar)
         setStatus('dirty')
-
     }
-    
-    
-   }
 
     if(status==='error'){
         <h1>Error</h1>
@@ -116,14 +108,14 @@ function EditarPrestatario2(props){
             <section>
                 <p> 
                     <label htmlFor="antiguedad">Antiguedad en meses</label> &nbsp;&nbsp;&nbsp;
-                    <input type="number" value={prospecto.antiguedad} onChange={handleChange} name="antiguedad" required>
+                    <input type="number" value={prospecto.antiguedad} onChange={handleChange} name="antiguedad">
                     </input>
                 </p>
             </section> 
             <section>
                 <p> 
                     <label htmlFor="capacidadPago">Capacidad de pago en pesos $ </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text"  value={prospecto.capacidadPago} onChange={handleChange} name="capacidadPago" required>
+                    <input type="text"  value={prospecto.capacidadPago} onChange={handleChange} name="capacidadPago">
                     </input>
                 </p>
             </section>
@@ -140,7 +132,7 @@ function EditarPrestatario2(props){
                <p>
                     <label htmlFor="altaISI"> Alta en ISI</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Interruptor checked={prospecto.altaISI} onClick={handleIZI} name="altaISI"/>
+                    <Interruptor checked={prospecto.altaISI} onClick={handleBoolC} name="altaISI"/>
                     
                 </p>
             </section>
@@ -148,7 +140,7 @@ function EditarPrestatario2(props){
             <section>
                 <p> 
                     <label htmlFor="fechaAltaISI">Fecha de alta en ISI</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="date"    on value={prospecto.fechaAltaISI} name="fechaAltaISI">
+                    <input type="date"    onChange={handleChange} value={prospecto.fechaAltaISI} name="fechaAltaISI">
                     </input>
                 </p>
             </section> 
@@ -156,8 +148,11 @@ function EditarPrestatario2(props){
             <section>
                 <p>
                     <label htmlFor="estatus">Estatus de Credito</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text"  value={prospecto.estatus}  onChange={handleDropC} name="estatus" >
-                    </input>
+                   <select value={prospecto.estatus} onChange={handleDropC} name="estatus">
+                       <option>En proceso</option>
+                       <option>Aprobado</option>
+                       <option>Rechazado</option>
+                   </select>
         
                 </p>
                 
@@ -165,7 +160,7 @@ function EditarPrestatario2(props){
             <section>
                 <p> 
                     <label htmlFor="creditoAutorizado">Credito autorizado en pesos $</label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" className="tel"  value={prospecto.creditoAutorizado} onClick={handleChange} name="creditoAutorizado">
+                    <input type="text" className="tel"  value={prospecto.creditoAutorizado} onChange={handleChange} name="creditoAutorizado">
                     </input>
                 </p>
             </section>
@@ -173,7 +168,7 @@ function EditarPrestatario2(props){
             <section>
                 <p> 
                     <label htmlFor="fechaAutorizacion">Fecha de autorización </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="date"   value={prospecto.fechaAutorizacion} onChange={handleChange} name="fechaAutorizacion" >
+                    <input type="date"   value={prospecto.fechaAutorizacion} onChange={handleChange} name="fechaAutorizacion">
                     </input>
                 </p>
             </section> 
