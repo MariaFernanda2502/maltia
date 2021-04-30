@@ -4,6 +4,9 @@ Este proyecto fue realizado con React
 ## Liga del Backend 
 https://github.com/MariaFernanda2502/maltia-api.git 
 
+## Liga de la documentación
+https://github.com/MariaFernanda2502/Documentacion-maltia.git
+
 ## Librerías utilizadas
 
     
